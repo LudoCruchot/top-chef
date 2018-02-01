@@ -1,0 +1,3401 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="fr" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="fr" dir="ltr"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="fr" dir="ltr"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed.png" />
+<meta http_equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Découvrez les meilleurs restaurants 1 étoile, 2 étoiles, 3 étoiles for France. Recherchez, sélectionnez et réservez votre restaurant préféré. " />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="shortcut icon" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://restaurant.michelin.fr/restaurants/france" />
+<link rel="shortlink" href="https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin" />
+  <title>Restaurants 1 étoile 2 étoiles 3 étoiles, France | MICHELIN Restaurants</title>
+  <link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_kQC7TIiuOUL-has6d3UlPcvL5d-J-ZBynxHRlanIpb4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_dHa27PDqXkihOl0gyNjWLcOy8Ce86zp5uT-cyMeofIM.css" media="all" />
+<style>#sliding-popup.sliding-popup-bottom{background:#FFFFFF;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#000000 !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_LnpaqQXxE2nCYN6lt14KkcSEmm5I2AgBfE1zpjsmhVY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_XNQxBwnCVpONXHvxWBw0SAS_fFzwuLEU6LIsSzYjgBk.css" media="all" />
+  <script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="//cdn.optimizely.com/js/7256613505.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_Ed0BKomvNdXZsmJXueVX5inNYkygvP26Z0trnq2eMI4.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_6uMVSUgDf9ldb_NCxvCamFQoenOq-XcovWYUCJT4HIU.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js__Di6eknNmsTpHPae3YTxYtHkT28XGQJ34v0FQnNn0wo.js"></script>
+<script src="https://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160513115841247657803235$170883&amp;lang=fra&amp;protocol=https"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_wwTPHyf721Wl7_QP2x0qZGxAOvOTRTzw5lofZ0NBVF8.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_2ciTPq16fzgZbD14tKmuSyMkAHTkKiONPObTPwearHA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","autocomplete_limit":{"limit":"2"},"ajaxPageState":{"theme":"michelin","theme_token":"yCm4hTp5EivJbJyw2Xd0cz0cL0R-QreC-WZl08O3Hwc","jquery_version":"1.10","js":{"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/js\/mr_b2c_michelin_maps.utility.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/js\/mr_b2c_michelin_maps.maps.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/js\/no-js.js":1,"\/\/cdn.optimizely.com\/js\/7256613505.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.slider.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/js\/Drupal.select2.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/jquery.lazyloader.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking_tracking.js":1,"public:\/\/languages\/fr_SaTkI1-ERX3F59X3KBjPe_PYkX7ers4AElLLiyjxgyI.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_search_pager\/js\/mr_b2c_search_pager.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_results.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/flexslider_views_slideshow\/js\/flexslider_views_slideshow.js":1,"sites\/mtpb2c_fr\/libraries\/flexslider\/jquery.flexslider-min.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/modal.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_facets.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo.utility.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/ajax-responder.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/jquery-validate\/jquery.validate.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2_locale_fr.js":1,"misc\/autocomplete.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/autocomplete_limit\/js\/autocomplete.limit.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_form.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search.ajax.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_footer_blocks\/js\/ft_b2c_footer_blocks.js":1,"https:\/\/apijsv2.viamichelin.com\/apijsv2\/api\/js?key=JSBS20160513115841247657803235$170883\u0026lang=fra\u0026protocol=https":1,"sites\/mtpb2c_fr\/libraries\/slideout\/slideout.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/js\/ft_b2c_sliding_menu.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo_gtm.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.sticky-kit.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/readmore.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.dotdotdot.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/script.js":1},"css":{"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/office_hours\/office_hours.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/lazyloader.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"misc\/ui\/jquery.ui.slider.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/panels\/css\/panels.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/css\/ft_b2c_poi_search_result.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/mtpb2c_fr\/libraries\/flexslider\/flexslider.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/css\/ft_b2c_poi_search_facets.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/modal.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_michelin_maps\/css\/mr_b2c_michelin_maps.css":1,"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/css\/select2_integration.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/css\/ft_b2c_sliding_menu.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/css\/restaurant.normalize.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/css\/restaurant.styles.css":1}},"search_result_markers":{"355797":{"id":"355797","xy":{"geom":"POINT (4.83748 47.0212)","geo_type":"point","lat":"47.021200000000","lon":"4.837480000000","left":"4.837480000000","top":"47.021200000000","right":"4.837480000000","bottom":"47.021200000000","geohash":"u077qpfw36"},"title":"Le Jardin des Remparts","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/355797\/3303306","bookable":true},"99781":{"id":"99781","xy":{"geom":"POINT (4.275858549566 46.428462126214)","geo_type":"point","lat":"46.428462126214","lon":"4.275858549566","left":"4.275858549566","top":"46.428462126214","right":"4.275858549566","bottom":"46.428462126214","geohash":"u0701k196sxhrpf3"},"title":"Fr\u00e9d\u00e9ric Doucet","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/99781\/3212566","bookable":true},"158021":{"id":"158021","xy":{"geom":"POINT (2.30100677 48.86985484)","geo_type":"point","lat":"48.869854840000","lon":"2.301006770000","left":"2.301006770000","top":"48.869854840000","right":"2.301006770000","bottom":"48.869854840000","geohash":"u09wh27x935p21"},"title":"Le 39V","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/158021\/3303931","bookable":true},"113926":{"id":"113926","xy":{"geom":"POINT (2.30721 48.88521)","geo_type":"point","lat":"48.885210000000","lon":"2.307210000000","left":"2.307210000000","top":"48.885210000000","right":"2.307210000000","bottom":"48.885210000000","geohash":"u09whe20cz"},"title":"Agap\u00e9","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/113926\/3303781","bookable":true},"312562":{"id":"312562","xy":{"geom":"POINT (2.2542 48.86655)","geo_type":"point","lat":"48.866550000000","lon":"2.254200000000","left":"2.254200000000","top":"48.866550000000","right":"2.254200000000","bottom":"48.866550000000","geohash":"u09tgrckq9"},"title":"Le Pr\u00e9 Catelan","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/312562\/3303541","bookable":true},"246211":{"id":"246211","xy":{"geom":"POINT (4.83277 45.79762)","geo_type":"point","lat":"45.797620000000","lon":"4.832770000000","left":"4.832770000000","top":"45.797620000000","right":"4.832770000000","bottom":"45.797620000000","geohash":"u05ktcpn7x"},"title":"Auberge de l\u0027\u00cele Barbe","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/246211\/3303311","bookable":true},"231356":{"id":"231356","xy":{"geom":"POINT (5.50157138 43.52338915)","geo_type":"point","lat":"43.523389150000","lon":"5.501571380000","left":"5.501571380000","top":"43.523389150000","right":"5.501571380000","bottom":"43.523389150000","geohash":"spezt5nn5gucnm"},"title":"Le Saint-Est\u00e8ve","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/231356\/2588401","bookable":true},"114536":{"id":"114536","xy":{"geom":"POINT (7.3592 48.07405)","geo_type":"point","lat":"48.074050000000","lon":"7.359200000000","left":"7.359200000000","top":"48.074050000000","right":"7.359200000000","bottom":"48.074050000000","geohash":"u0t1rrwg9u"},"title":"JY\u0027S","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/114536\/2788736","bookable":true},"209541":{"id":"209541","xy":{"geom":"POINT (7.11838854 43.5607191)","geo_type":"point","lat":"43.560719100000","lon":"7.118388540000","left":"7.118388540000","top":"43.560719100000","right":"7.118388540000","bottom":"43.560719100000","geohash":"sptpcczrw6x5n8"},"title":"Les P\u00eacheurs","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/209541\/3302826","bookable":true},"42361":{"id":"42361","xy":{"geom":"POINT (2.36145 43.20131)","geo_type":"point","lat":"43.201310000000","lon":"2.361450000000","left":"2.361450000000","top":"43.201310000000","right":"2.361450000000","bottom":"43.201310000000","geohash":"sp9tv8x9cg"},"title":"La table de Franck Putelat","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/42361\/3302966","bookable":true},"44266":{"id":"44266","xy":{"geom":"POINT (2.3351075 48.85642)","geo_type":"point","lat":"48.856420000000","lon":"2.335107500000","left":"2.335107500000","top":"48.856420000000","right":"2.335107500000","bottom":"48.856420000000","geohash":"u09tvnh37by37"},"title":"Le Restaurant","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/44266\/3304611","bookable":true},"10211":{"id":"10211","xy":{"geom":"POINT (5.78351557 43.25087487)","geo_type":"point","lat":"43.250874870000","lon":"5.783515570000","left":"5.783515570000","top":"43.250874870000","right":"5.783515570000","bottom":"43.250874870000","geohash":"spsn59e6temy0v"},"title":"Christophe Bacqui\u00e9","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/10211\/3303636","bookable":true},"2501":{"id":"2501","xy":{"geom":"POINT (0.45901786 44.79732897)","geo_type":"point","lat":"44.797328970000","lon":"0.459017860000","left":"0.459017860000","top":"44.797328970000","right":"0.459017860000","bottom":"44.797328970000","geohash":"spbqf7n5rgks0y"},"title":"La Tour des Vents","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/2501\/3304216","bookable":true},"297701":{"id":"297701","xy":{"geom":"POINT (2.30205 48.85833)","geo_type":"point","lat":"48.858330000000","lon":"2.302050000000","left":"2.302050000000","top":"48.858330000000","right":"2.302050000000","bottom":"48.858330000000","geohash":"u09tuqkk3s"},"title":"Le Violon d\u0027Ingres","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/297701\/3303891","bookable":true},"161136":{"id":"161136","xy":{"geom":"POINT (2.28281 48.87021)","geo_type":"point","lat":"48.870210000000","lon":"2.282810000000","left":"2.282810000000","top":"48.870210000000","right":"2.282810000000","bottom":"48.870210000000","geohash":"u09w5bw397"},"title":"Les Tablettes de Jean-Louis Nomicos","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/161136\/3304076","bookable":true},"246596":{"id":"246596","xy":{"geom":"POINT (4.8478 45.8157)","geo_type":"point","lat":"45.815700000000","lon":"4.847800000000","left":"4.847800000000","top":"45.815700000000","right":"4.847800000000","bottom":"45.815700000000","geohash":"u05kwk6pc"},"title":"Paul Bocuse","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/246596\/3304586","bookable":true},"368952":{"id":"368952","xy":{"geom":"POINT (1.6066375 50.7683875)","geo_type":"point","lat":"50.768387500000","lon":"1.606637500000","left":"1.606637500000","top":"50.768387500000","right":"1.606637500000","bottom":"50.768387500000","geohash":"u110ud1gm37ez"},"title":"La Li\u00e9geoise","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/368952\/3206421","bookable":true},"29246":{"id":"29246","xy":{"geom":"POINT (1.32925 47.58622)","geo_type":"point","lat":"47.586220000000","lon":"1.329250000000","left":"1.329250000000","top":"47.586220000000","right":"1.329250000000","bottom":"47.586220000000","geohash":"u02ywnzcvf"},"title":"L\u0027Orangerie du Ch\u00e2teau","content_url":"https:\/\/restaurant.michelin.fr\/poi-tooltip\/29246\/3303316","bookable":true}},"price_range":{"min_price":20,"max_price":110},"site_default_currency":"\u20ac","seo":{"path":"\/restaurants\/france\/restaurants-1-etoile-michelin\/restaurants-2-etoiles-michelin\/restaurants-3-etoiles-michelin","query_string":"","h1":"Restaurants 1 \u00e9toile 2 \u00e9toiles 3 \u00e9toiles, France - MICHELIN Restaurants","title":"Restaurants 1 \u00e9toile 2 \u00e9toiles 3 \u00e9toiles, France | MICHELIN Restaurants"},"map_pins":{"normal":{"non-bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/default-marker.png","x":-31,"y":-41},"bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/bookable-marker.png","x":-31,"y":-41}},"active":{"non-bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/active\/default-marker.png","x":-31,"y":-41},"bookable":{"url":"\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/active\/bookable-marker.png","x":-31,"y":-41}}},"caption_html":"\u003Cimg src=\u0022\/sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/img\/map-pins\/normal\/bookable-marker.png\u0022\u003E\u0026nbsp;\u003Cspan class=\u0022caption\u0022\u003ER\u00e9servation en ligne\u003C\/span\u003E","auto_search_html":"\u003Cdiv class=\u0022auto-search auto-search-enabled\u0022\u003E\u003Cinput type=\u0022checkbox\u0022 value=\u00221\u0022 id=\u0022update-results-auto\u0022 class=\u0022default-enabled\u0022\u003E\u003Clabel for=\u0022update-results-auto\u0022\u003EActualiser la carte automatiquement\u003C\/label\u003E\u003C\/div\u003E\u003Cdiv class=\u0022auto-search auto-search-disabled\u0022 style=\u0022display: none;\u0022\u003E\u003Cinput type=\u0022button\u0022 value=\u0022Actualiser la recherche\u0022 id=\u0022update-results-manual\u0022\u003E\u003C\/div\u003E","back_to_results":"\u003Cinput type=\u0022button\u0022 class=\u0022btn btn-show-search-result-list mobile-only\u0022 value=\u0022Retour\u0022 \/\u003E","urlIsAjaxTrusted":{"\/search-restaurants":true,"\/search-restaurants-quick":true,"\/2adb5o5\/benkay-paris-15":true},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003C\/noscript\u003E","throbber":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003C\/noscript\u003E"},"filter_delimiter":"||","mr_b2c_michelin_maps":{"default":{"zoom":5,"center":{"lat":46.2276,"lon":2.2137}}},"select_2":{"elements":{"edit-cooking-type--2":{"placeholder":"Tous les types de cuisine","allowClear":false}},"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":15},"process_all_selects_on_page":true,"no_version_check":false,"settings_updated":true},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":1,"popup_clicking_confirmation":0,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EEn continuant \u00e0 naviguer sur notre site, vous acceptez que nous utilisions des cookies pour mesurer l\u0027audience de notre site et vous proposer des contenus selon vos centres d\u0027int\u00e9r\u00eats. \u003Ca href=\u0022http:\/\/restaurant.michelin.fr\u0022\u003EEn savoir plus et g\u00e9rer les param\u00e8tres.\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EOui\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENon\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003E\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/restaurant.michelin.fr","popup_link_new_window":1,"popup_position":null,"popup_language":"fr","domain":"","cookie_expiration_period":15},"clientsideValidation":{"forms":{"ft-b2c-poi-search-block-form":{"errorPlacement":5,"general":{"errorClass":"error","wrapper":"li","validateTabs":"","scrollTo":1,"scrollSpeed":1000,"disableHtml5Validation":1,"validateOnBlur":1,"validateOnBlurAlways":0,"validateOnKeyUp":"0","validateBeforeAjax":"1","validateOnSubmit":1,"showMessages":0,"errorElement":"label"},"rules":{"text":{"maxlength":128,"messages":{"maxlength":"O\u00f9 ? field has to have maximum 128 values."}}}}},"general":{"usexregxp":0,"months":{"Janvier":1,"Jan":1,"F\u00e9vrier":2,"Fev":2,"Mars":3,"Mar":3,"Avril":4,"Avr":4,"Mai":5,"Juin":6,"Juillet":7,"Jui":7,"Ao\u00fbt":8,"Octobre":10,"Sep":9,"Oct":10,"Novembre":11,"Nov":11,"D\u00e9cembre":12,"Dec":12}},"groups":{"ft-b2c-poi-search-block-form":{}}}});</script>
+</head>
+<body class="html not-front not-logged-in page-restaurants page-restaurants-france page-restaurants-france-restaurants-1-etoile-michelin page-restaurants-france-restaurants-1-etoile-michelin-restaurants-2-etoiles-michelin page-restaurants-france-restaurants-1-etoile-michelin-restaurants-2-etoiles-michelin-restaurants-3-etoiles-michelin page-restaurant-search-results i18n-fr section-restaurants">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WNBQ4S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WNBQ4S');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    
+<div class="l-page">
+  <header class="l-header clearfix" role="banner">
+    <div class="l-header-inner">
+        <div class="l-region l-region--header">
+    <div id="block-ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu" class="block block--ft-b2c-sliding-menu block--ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu">
+        <div class="block__content">
+    <div class="header-menu-trigger-wrapper"><a href="#navbar" class="hamburger js-slideout-toggle"><span>Menu</span></a></div>  </div>
+</div>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-site-name" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-site-name">
+        <div class="block__content">
+    <div class="site-name"><a href="/" class="michelin-header__logo"></a></div>  </div>
+</div>
+  </div>
+        <div class="l-region l-region--sub-header">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="first last leaf"><a href="/instants-michelin">Instants Michelin</a></li>
+</ul></nav>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-logo" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-logo">
+        <div class="block__content">
+    <div class="site-logo"><a href="https://restaurant.michelin.fr" title="Accueil" rel="Accueil" class="logo"><img class="header-michelin-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /><noscript><img class="header-michelin-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /></noscript></a></div>  </div>
+</div>
+
+<div class="search-button-wrapper">
+  <div class="search-icon search-icon-open icon-mr icon-search"></div>
+  <div class="search-icon search-icon-close icon-mr icon-croix01"></div>
+</div>
+  </div>
+    </div>
+  </header>
+
+  <div class="l-content-wrapper">
+    <div class="l-overlay"></div>
+    <div class="l-main-prefix">
+                <div class="l-region l-region--main-prefix">
+    <div id="block-ft-b2c-poi-search-ft-b2c-poi-search-form" class="block block--ft-b2c-poi-search block--ft-b2c-poi-search-ft-b2c-poi-search-form">
+        <div class="block__content">
+    <form class="mr-poi-search-form ft-b2c-poi-search-block-form" action="/search-restaurants-quick" method="get" id="ft-b2c-poi-search-block-form" accept-charset="UTF-8"><div><div class="ft-b2c-poi-search-form ft-b2c-poi-search-form-other form-wrapper" id="edit-content"><input attr-text="France" type="hidden" name="localisation" value="1424" />
+<div class="form-item form-type-textfield form-item-text">
+  <label for="edit-text">Où ? </label>
+ <input data-limit="2" placeholder="Ville / Nom de restaurant" type="text" id="edit-text" name="text" value="France" size="60" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-text-autocomplete" value="https://restaurant.michelin.fr/index.php?q=search/autocomplete" disabled="disabled" class="autocomplete" /> <span class="field-suffix"><span class="around-me-search" title="Search nearby restaurants"></span></span>
+</div>
+<div class="form-item form-type-select form-item-cooking-type">
+  <label for="edit-cooking-type--2">Quoi ? </label>
+ <select class="use-select-2 form-select" id="edit-cooking-type--2" name="cooking_type"><option value="" selected="selected">Tous les types de cuisine</option><option value="516">Asiatique</option><option value="256">Bistrot, Brasserie, Bar à vin</option><option value="321">Poissons, Fruits de Mer</option><option value="306">Gastronomique</option><option value="366">Viandes, Grillades</option><option value="1101">Italien</option><option value="596">Japonais</option><option value="291">Cuisine Moderne, Créative</option><option value="931">Cuisine Régionale Française</option><option value="351">Traditionnel, Classique</option></select>
+</div>
+<div class="form-item form-type-checkbox form-item-gm-selection">
+ <input type="checkbox" id="edit-gm-selection--2" name="gm_selection" value="1" class="form-checkbox" />  <label class="option" for="edit-gm-selection--2">Sélection du guide MICHELIN </label>
+
+</div>
+<input class="use-ajax-submit form-submit" type="submit" id="edit-submit--2" name="op" value="Rechercher" /></div><input type="hidden" name="latitude" value="" />
+<input type="hidden" name="longitude" value="" />
+<input type="hidden" name="form_build_id" value="form-lx92CAkTNA2i1Mvgm3S38bGIMkn6BwUx7AwpketAxlE" />
+<input type="hidden" name="form_id" value="ft_b2c_poi_search_block_form" />
+</div></form>  </div>
+</div>
+  </div>
+          </div>
+
+    <div class="l-main" role="main">
+      <div class="l-content clearfix">
+        <div class="l-content-inner">
+          <div class="l-breadcrumbs">
+                      </div>
+                                                          </div>
+        <div class="panel-display panels-michelin-content-layout panels-michelin-2col clearfix">
+
+      <div class="panels-content-top-wrapper">
+      <div class="panel-panel panels-content-top">
+        <div class="panel-pane pane-page-breadcrumb">
+  <div class="panel-pane-inside">
+                        <ol class="restaurant_base-breadcrumbs-list" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class=" mr-crumb" itemprop="item" href="https://restaurant.michelin.fr/"><span itemprop="name">Accueil</span><meta itemprop="position" content="1" /></a></li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span class=" mr-crumb" itemprop="item"><span itemprop="name">France</span><meta itemprop="position" content="2" /></span></li></ol>          </div>
+</div>
+      </div>
+    </div>
+  
+  <div class="panels-content-main">
+
+    <div id="panels-content-main-leftwrapper" class="panels-content-main-leftwrapper">
+
+              <div class="panel-panel panels-content-left-top">
+          <div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-title">
+  <div class="panel-pane-inside">
+                        <h1>Restaurants 1 étoile 2 étoiles 3 étoiles, France - MICHELIN Restaurants</h1> 604 Restaurants trouvés<a class="btn btn-show-search-result-map" href="#">Voir sur la carte</a>          </div>
+</div>
+<div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-facets">
+  <div class="panel-pane-inside">
+                        
+<div class="facets-wrapper">
+  <div class="facets-wrapper-inside">
+    <!-- Hidden by default, displayed only one filters are expanded. -->
+    <div class="row-wrapper show-expanded row-filters-info">
+      <div class="filters-selection-summary">
+        Filtres sélectionnés (3)      </div>
+      <div id="shrink-filters" class="shrink-filters"><span class="icon-mr icon-croix01"></span></div>
+    </div>
+
+    <!-- First row, always visible. -->
+    <div class="row-wrapper row-main-filters has-filters">
+      
+<div class="filter-item filter-item-gm-selection form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="gm_selection"
+  attr-gtm-title="Sélection du Guide MICHELIN"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="boolean" value="1"
+     autocomplete="off"
+    id="filter-gm-selection" attr-filter-name="gm_selection" />
+
+  <label for="filter-gm-selection">
+    <span class="facets-filter-link"
+      >
+      Sélection du Guide MICHELIN
+          </span>
+  </label>
+
+</div>
+
+
+              
+<div class="filter-item filter-item-number-of-offers form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="number_of_offers"
+  attr-gtm-title="Avec des offres"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="number_of_offers" value="1"
+     autocomplete="off"
+    id="filter-number-of-offers" attr-filter-name="number_of_offers" />
+
+  <label for="filter-number-of-offers">
+    <span class="facets-filter-link"
+      >
+      Avec des offres
+          </span>
+  </label>
+
+</div>
+      
+      <!-- Hidden by default, shown only one filters are expanded. -->
+      <div class="show-expanded filter-item-booking">
+        
+<div class="filter-item filter-item-booking-activated form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="booking_activated"
+  attr-gtm-title="Réservation en ligne"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="boolean" value="1"
+     autocomplete="off"
+    id="filter-booking-activated" attr-filter-name="booking_activated" />
+
+  <label for="filter-booking-activated">
+    <span class="facets-filter-link"
+      >
+      Réservation en ligne
+          </span>
+  </label>
+
+</div>
+      </div>
+
+      <!-- Hidden when filters are expanded. -->
+      <div class="filter-item filter-item-expand-filters form-item form-button form-submit show-hidden">
+        <input type="button" id="expand-filters" value="Voir tous les filtres" />
+      </div>
+      <div class="border-bottom show-hidden"></div>
+    </div>
+
+    <!-- Show the selected filters when filters are shrinked. -->
+    <div id="selected-filters" class="row-wrapper show-hidden selected-filters">
+      
+<a class="facets-selected-filter-link" rel="nofollow"
+  attr-type="array" attr-target="filter-stars-1"
+   href="/restaurants/france/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin" >
+    1 étoile    <span class="icon-mr icon-croix01"></span>
+</a>
+ 
+<a class="facets-selected-filter-link" rel="nofollow"
+  attr-type="array" attr-target="filter-stars-2"
+   href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-3-etoiles-michelin" >
+    2 étoiles    <span class="icon-mr icon-croix01"></span>
+</a>
+ 
+<a class="facets-selected-filter-link" rel="nofollow"
+  attr-type="array" attr-target="filter-stars-3"
+   href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin" >
+    3 étoiles    <span class="icon-mr icon-croix01"></span>
+</a>
+    </div>
+
+    <div class="show-expanded row-expanded-filters">
+            <div class="row-wrapper row-guide-michelin">
+        <h2 class="row-title">
+          Guide MICHELIN 2017          <a href="/distinctions-help/nojs" class="ctools-use-modal"><span class="icon-mr icon-infosInterrogation01"></span></a>
+        </h2>
+
+        <div class="row-content">
+          
+<div class="filter-item filter-item-bib-gourmand form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="Bib Gourmand"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="boolean" value="1"
+     autocomplete="off"
+    id="filter-bib-gourmand" attr-filter-name="bib_gourmand" />
+
+  <label for="filter-bib-gourmand">
+    <span class="facets-filter-link"
+      >
+      Bib Gourmand
+            <span class="icon-mr icon-cotationBibGourmand red"></span>
+          </span>
+  </label>
+
+</div>
+          
+<div class="filter-item filter-item-michelin-plate form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="Assiette MICHELIN"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="boolean" value="1"
+     autocomplete="off"
+    id="filter-michelin-plate" attr-filter-name="michelin_plate" />
+
+  <label for="filter-michelin-plate">
+    <span class="facets-filter-link"
+      >
+      Assiette MICHELIN
+            <span class="icon-mr icon-cotationAssiette red"></span>
+          </span>
+  </label>
+
+</div>
+          
+<div class="filter-item filter-item-piecette form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="Menu à moins de 20 €"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="boolean" value="1"
+     autocomplete="off"
+    id="filter-piecette" attr-filter-name="piecette" />
+
+  <label for="filter-piecette">
+    <span class="facets-filter-link"
+      >
+      Menu à moins de 20 €
+            <span class="icon-mr icon-cotationPiecette black"></span>
+          </span>
+  </label>
+
+</div>
+
+          
+<div class="filter-item filter-item-stars-1 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="1 étoile"
+  attr-gtm-status="selected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="array" value="1"
+    checked="checked" autocomplete="off"
+    id="filter-stars-1" attr-filter-name="stars" />
+
+  <label for="filter-stars-1">
+    <span class="facets-filter-link"
+      >
+      1 étoile
+            <span class="icon-mr icon-cotation1etoile red"></span>
+          </span>
+  </label>
+
+</div>
+          
+<div class="filter-item filter-item-stars-2 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="2 étoiles"
+  attr-gtm-status="selected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="array" value="2"
+    checked="checked" autocomplete="off"
+    id="filter-stars-2" attr-filter-name="stars" />
+
+  <label for="filter-stars-2">
+    <span class="facets-filter-link"
+      >
+      2 étoiles
+            <span class="icon-mr icon-cotation2etoiles red"></span>
+          </span>
+  </label>
+
+</div>
+          
+<div class="filter-item filter-item-stars-3 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="Michelin Guide"
+  attr-gtm-title="3 étoiles"
+  attr-gtm-status="selected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="array" value="3"
+    checked="checked" autocomplete="off"
+    id="filter-stars-3" attr-filter-name="stars" />
+
+  <label for="filter-stars-3">
+    <span class="facets-filter-link"
+      >
+      3 étoiles
+            <span class="icon-mr icon-cotation3etoiles red"></span>
+          </span>
+  </label>
+
+</div>
+        </div>
+      </div>
+      
+      <div class="row-wrapper row-price-slider">
+        <h2 class="row-title">
+          Prix        </h2>
+
+        <div class="row-content">
+          <div id="price-slider" class="price-slider"></div>
+          <div id="price-min" class="price-min"></div>
+          <div id="price-max" class="price-max"></div>
+        </div>
+      </div>
+
+            <div class="row-wrapper row-cooking-types">
+        <h2 class="row-title">
+          Cuisine        </h2>
+
+        <div class="row-content">
+                      
+<div class="filter-item filter-item-cooking-type-351 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Traditionnel, Classique"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="351"
+     autocomplete="off"
+    id="filter-cooking-type-351" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-351">
+    <span class="facets-filter-link"
+      >
+      Traditionnel, Classique
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-291 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Cuisine Moderne, Créative"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="291"
+     autocomplete="off"
+    id="filter-cooking-type-291" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-291">
+    <span class="facets-filter-link"
+      >
+      Cuisine Moderne, Créative
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-786 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Européen"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="786"
+     autocomplete="off"
+    id="filter-cooking-type-786" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-786">
+    <span class="facets-filter-link"
+      >
+      Européen
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-306 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Gastronomique"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="306"
+     autocomplete="off"
+    id="filter-cooking-type-306" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-306">
+    <span class="facets-filter-link"
+      >
+      Gastronomique
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-931 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Cuisine Régionale Française"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="931"
+     autocomplete="off"
+    id="filter-cooking-type-931" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-931">
+    <span class="facets-filter-link"
+      >
+      Cuisine Régionale Française
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-256 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Bistrot, Brasserie, Bar à vin"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="256"
+     autocomplete="off"
+    id="filter-cooking-type-256" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-256">
+    <span class="facets-filter-link"
+      >
+      Bistrot, Brasserie, Bar à vin
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-321 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Poissons, Fruits de Mer"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="321"
+     autocomplete="off"
+    id="filter-cooking-type-321" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-321">
+    <span class="facets-filter-link"
+      >
+      Poissons, Fruits de Mer
+          </span>
+  </label>
+
+</div>
+                      
+<div class="filter-item filter-item-cooking-type-516 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Asiatique"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="516"
+     autocomplete="off"
+    id="filter-cooking-type-516" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-516">
+    <span class="facets-filter-link"
+      >
+      Asiatique
+          </span>
+  </label>
+
+</div>
+          
+                    <div class="view-more-link">+ Voir tous les filtres Cuisine</div>
+
+          <div class="view-more">
+                          
+<div class="filter-item filter-item-cooking-type-1101 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Italien"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="1101"
+     autocomplete="off"
+    id="filter-cooking-type-1101" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-1101">
+    <span class="facets-filter-link"
+      >
+      Italien
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-1026 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Provençal"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="1026"
+     autocomplete="off"
+    id="filter-cooking-type-1026" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-1026">
+    <span class="facets-filter-link"
+      >
+      Provençal
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-366 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Viandes, Grillades"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="366"
+     autocomplete="off"
+    id="filter-cooking-type-366" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-366">
+    <span class="facets-filter-link"
+      >
+      Viandes, Grillades
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-316 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Pizzeria"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="316"
+     autocomplete="off"
+    id="filter-cooking-type-316" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-316">
+    <span class="facets-filter-link"
+      >
+      Pizzeria
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-596 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Japonais"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="596"
+     autocomplete="off"
+    id="filter-cooking-type-596" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-596">
+    <span class="facets-filter-link"
+      >
+      Japonais
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-986 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Cuisines du Sud-Ouest"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="986"
+     autocomplete="off"
+    id="filter-cooking-type-986" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-986">
+    <span class="facets-filter-link"
+      >
+      Cuisines du Sud-Ouest
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-336 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Tapas"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="336"
+     autocomplete="off"
+    id="filter-cooking-type-336" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-336">
+    <span class="facets-filter-link"
+      >
+      Tapas
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-371 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Africain"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="371"
+     autocomplete="off"
+    id="filter-cooking-type-371" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-371">
+    <span class="facets-filter-link"
+      >
+      Africain
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-751 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Cuisine du Moyen Orient"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="751"
+     autocomplete="off"
+    id="filter-cooking-type-751" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-751">
+    <span class="facets-filter-link"
+      >
+      Cuisine du Moyen Orient
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-936 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Alsacien"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="936"
+     autocomplete="off"
+    id="filter-cooking-type-936" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-936">
+    <span class="facets-filter-link"
+      >
+      Alsacien
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-566 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Indien"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="566"
+     autocomplete="off"
+    id="filter-cooking-type-566" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-566">
+    <span class="facets-filter-link"
+      >
+      Indien
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-406 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Américain"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="406"
+     autocomplete="off"
+    id="filter-cooking-type-406" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-406">
+    <span class="facets-filter-link"
+      >
+      Américain
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-536 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Chinois"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="536"
+     autocomplete="off"
+    id="filter-cooking-type-536" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-536">
+    <span class="facets-filter-link"
+      >
+      Chinois
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-391 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Marocain"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="391"
+     autocomplete="off"
+    id="filter-cooking-type-391" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-391">
+    <span class="facets-filter-link"
+      >
+      Marocain
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-776 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Libanais"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="776"
+     autocomplete="off"
+    id="filter-cooking-type-776" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-776">
+    <span class="facets-filter-link"
+      >
+      Libanais
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-666 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Thaïlandais"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="666"
+     autocomplete="off"
+    id="filter-cooking-type-666" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-666">
+    <span class="facets-filter-link"
+      >
+      Thaïlandais
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-981 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Corse"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="981"
+     autocomplete="off"
+    id="filter-cooking-type-981" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-981">
+    <span class="facets-filter-link"
+      >
+      Corse
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-286 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Crêperie"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="286"
+     autocomplete="off"
+    id="filter-cooking-type-286" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-286">
+    <span class="facets-filter-link"
+      >
+      Crêperie
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-341 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Tartes, Salades"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="341"
+     autocomplete="off"
+    id="filter-cooking-type-341" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-341">
+    <span class="facets-filter-link"
+      >
+      Tartes, Salades
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-1046 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Espagnol"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="1046"
+     autocomplete="off"
+    id="filter-cooking-type-1046" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-1046">
+    <span class="facets-filter-link"
+      >
+      Espagnol
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-296 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Fromages, Fondues"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="296"
+     autocomplete="off"
+    id="filter-cooking-type-296" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-296">
+    <span class="facets-filter-link"
+      >
+      Fromages, Fondues
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-686 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Cuisine des îles"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="686"
+     autocomplete="off"
+    id="filter-cooking-type-686" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-686">
+    <span class="facets-filter-link"
+      >
+      Cuisine des îles
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-621 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Sushi"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="621"
+     autocomplete="off"
+    id="filter-cooking-type-621" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-621">
+    <span class="facets-filter-link"
+      >
+      Sushi
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-676 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Vietnamien"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="676"
+     autocomplete="off"
+    id="filter-cooking-type-676" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-676">
+    <span class="facets-filter-link"
+      >
+      Vietnamien
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-941 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Auvergnat"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="941"
+     autocomplete="off"
+    id="filter-cooking-type-941" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-941">
+    <span class="facets-filter-link"
+      >
+      Auvergnat
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-cooking-type-561 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="cooking_type"
+  attr-gtm-title="Coréen"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="561"
+     autocomplete="off"
+    id="filter-cooking-type-561" attr-filter-name="cooking_type" />
+
+  <label for="filter-cooking-type-561">
+    <span class="facets-filter-link"
+      >
+      Coréen
+          </span>
+  </label>
+
+</div>
+                        <div class="view-less-link">- Masquer tous les filtres Cuisine</div>
+          </div>
+                  </div>
+      </div>
+      
+      <div id="accordion" class="filter-accordion-blocks">
+
+                <div class="row-wrapper row-services">
+          <h2 class="row-title">
+            Services          </h2>
+
+          <div class="row-content">
+                          
+<div class="filter-item filter-item-services-35141 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Non fumeur"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35141"
+     autocomplete="off"
+    id="filter-services-35141" attr-filter-name="services" />
+
+  <label for="filter-services-35141">
+    <span class="facets-filter-link"
+      >
+      Non fumeur
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35151 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Repas servi en terrasse"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35151"
+     autocomplete="off"
+    id="filter-services-35151" attr-filter-name="services" />
+
+  <label for="filter-services-35151">
+    <span class="facets-filter-link"
+      >
+      Repas servi en terrasse
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35131 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Groupes acceptés"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35131"
+     autocomplete="off"
+    id="filter-services-35131" attr-filter-name="services" />
+
+  <label for="filter-services-35131">
+    <span class="facets-filter-link"
+      >
+      Groupes acceptés
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35106 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Air Conditionné"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35106"
+     autocomplete="off"
+    id="filter-services-35106" attr-filter-name="services" />
+
+  <label for="filter-services-35106">
+    <span class="facets-filter-link"
+      >
+      Air Conditionné
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35101 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Accès handicapés"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35101"
+     autocomplete="off"
+    id="filter-services-35101" attr-filter-name="services" />
+
+  <label for="filter-services-35101">
+    <span class="facets-filter-link"
+      >
+      Accès handicapés
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35146 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Parking"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35146"
+     autocomplete="off"
+    id="filter-services-35146" attr-filter-name="services" />
+
+  <label for="filter-services-35146">
+    <span class="facets-filter-link"
+      >
+      Parking
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35156 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Salon pour repas privés"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35156"
+     autocomplete="off"
+    id="filter-services-35156" attr-filter-name="services" />
+
+  <label for="filter-services-35156">
+    <span class="facets-filter-link"
+      >
+      Salon pour repas privés
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-services-35121 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Banquet"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35121"
+     autocomplete="off"
+    id="filter-services-35121" attr-filter-name="services" />
+
+  <label for="filter-services-35121">
+    <span class="facets-filter-link"
+      >
+      Banquet
+          </span>
+  </label>
+
+</div>
+            
+                        <div class="view-more-link">+ Voir tous les filtres Services</div>
+
+            <div class="view-more">
+                              
+<div class="filter-item filter-item-services-35126 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Chiens interdits"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35126"
+     autocomplete="off"
+    id="filter-services-35126" attr-filter-name="services" />
+
+  <label for="filter-services-35126">
+    <span class="facets-filter-link"
+      >
+      Chiens interdits
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-35136 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Jardin de repos"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35136"
+     autocomplete="off"
+    id="filter-services-35136" attr-filter-name="services" />
+
+  <label for="filter-services-35136">
+    <span class="facets-filter-link"
+      >
+      Jardin de repos
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-35161 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Service tardif"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35161"
+     autocomplete="off"
+    id="filter-services-35161" attr-filter-name="services" />
+
+  <label for="filter-services-35161">
+    <span class="facets-filter-link"
+      >
+      Service tardif
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-35166 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Voiturier"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35166"
+     autocomplete="off"
+    id="filter-services-35166" attr-filter-name="services" />
+
+  <label for="filter-services-35166">
+    <span class="facets-filter-link"
+      >
+      Voiturier
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-35116 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Ascenceur"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35116"
+     autocomplete="off"
+    id="filter-services-35116" attr-filter-name="services" />
+
+  <label for="filter-services-35116">
+    <span class="facets-filter-link"
+      >
+      Ascenceur
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-35111 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Anniversaire"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="35111"
+     autocomplete="off"
+    id="filter-services-35111" attr-filter-name="services" />
+
+  <label for="filter-services-35111">
+    <span class="facets-filter-link"
+      >
+      Anniversaire
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-63461 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Wifi"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="63461"
+     autocomplete="off"
+    id="filter-services-63461" attr-filter-name="services" />
+
+  <label for="filter-services-63461">
+    <span class="facets-filter-link"
+      >
+      Wifi
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-63496 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Terrasse"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="63496"
+     autocomplete="off"
+    id="filter-services-63496" attr-filter-name="services" />
+
+  <label for="filter-services-63496">
+    <span class="facets-filter-link"
+      >
+      Terrasse
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-63466 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Chiens autorisés"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="63466"
+     autocomplete="off"
+    id="filter-services-63466" attr-filter-name="services" />
+
+  <label for="filter-services-63466">
+    <span class="facets-filter-link"
+      >
+      Chiens autorisés
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-63481 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Animaux autorisés"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="63481"
+     autocomplete="off"
+    id="filter-services-63481" attr-filter-name="services" />
+
+  <label for="filter-services-63481">
+    <span class="facets-filter-link"
+      >
+      Animaux autorisés
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-65391 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Privatisation"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="65391"
+     autocomplete="off"
+    id="filter-services-65391" attr-filter-name="services" />
+
+  <label for="filter-services-65391">
+    <span class="facets-filter-link"
+      >
+      Privatisation
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-65381 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Parking Gratuit"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="65381"
+     autocomplete="off"
+    id="filter-services-65381" attr-filter-name="services" />
+
+  <label for="filter-services-65381">
+    <span class="facets-filter-link"
+      >
+      Parking Gratuit
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-services-65386 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="services"
+  attr-gtm-title="Voiturier Gratuit"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="65386"
+     autocomplete="off"
+    id="filter-services-65386" attr-filter-name="services" />
+
+  <label for="filter-services-65386">
+    <span class="facets-filter-link"
+      >
+      Voiturier Gratuit
+          </span>
+  </label>
+
+</div>
+                            <div class="view-less-link">- Masquer tous les filtres Services</div>
+            </div>
+                      </div>
+        </div>
+        
+                <div class="row-wrapper row-atmosphere">
+          <h2 class="row-title">
+            Cadre ou Ambiance          </h2>
+
+          <div class="row-content">
+                          
+<div class="filter-item filter-item-ambiance-181 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Terrasse"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="181"
+     autocomplete="off"
+    id="filter-ambiance-181" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-181">
+    <span class="facets-filter-link"
+      >
+      Terrasse
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-141 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Jardin, parc"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="141"
+     autocomplete="off"
+    id="filter-ambiance-141" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-141">
+    <span class="facets-filter-link"
+      >
+      Jardin, parc
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-186 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Vue exceptionnelle"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="186"
+     autocomplete="off"
+    id="filter-ambiance-186" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-186">
+    <span class="facets-filter-link"
+      >
+      Vue exceptionnelle
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-171 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Romantique"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="171"
+     autocomplete="off"
+    id="filter-ambiance-171" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-171">
+    <span class="facets-filter-link"
+      >
+      Romantique
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-136 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Insolite"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="136"
+     autocomplete="off"
+    id="filter-ambiance-136" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-136">
+    <span class="facets-filter-link"
+      >
+      Insolite
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-121 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Branché"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="121"
+     autocomplete="off"
+    id="filter-ambiance-121" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-121">
+    <span class="facets-filter-link"
+      >
+      Branché
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-126 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Cadre historique"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="126"
+     autocomplete="off"
+    id="filter-ambiance-126" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-126">
+    <span class="facets-filter-link"
+      >
+      Cadre historique
+          </span>
+  </label>
+
+</div>
+                          
+<div class="filter-item filter-item-ambiance-146 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Lounge"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="146"
+     autocomplete="off"
+    id="filter-ambiance-146" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-146">
+    <span class="facets-filter-link"
+      >
+      Lounge
+          </span>
+  </label>
+
+</div>
+            
+                        <div class="view-more-link">+ Voir tous les filtres Cadre ou Ambiance</div>
+
+            <div class="view-more">
+                              
+<div class="filter-item filter-item-ambiance-151 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Musique live"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="151"
+     autocomplete="off"
+    id="filter-ambiance-151" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-151">
+    <span class="facets-filter-link"
+      >
+      Musique live
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-116 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Bord de l'eau"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="116"
+     autocomplete="off"
+    id="filter-ambiance-116" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-116">
+    <span class="facets-filter-link"
+      >
+      Bord de l'eau
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-65406 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Cosy"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="65406"
+     autocomplete="off"
+    id="filter-ambiance-65406" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-65406">
+    <span class="facets-filter-link"
+      >
+      Cosy
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-176 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Tennis"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="176"
+     autocomplete="off"
+    id="filter-ambiance-176" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-176">
+    <span class="facets-filter-link"
+      >
+      Tennis
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-161 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="People"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="161"
+     autocomplete="off"
+    id="filter-ambiance-161" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-161">
+    <span class="facets-filter-link"
+      >
+      People
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-166 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Piscine"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="166"
+     autocomplete="off"
+    id="filter-ambiance-166" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-166">
+    <span class="facets-filter-link"
+      >
+      Piscine
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-63476 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Patio"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="63476"
+     autocomplete="off"
+    id="filter-ambiance-63476" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-63476">
+    <span class="facets-filter-link"
+      >
+      Patio
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-101 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Accès piste de ski"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="101"
+     autocomplete="off"
+    id="filter-ambiance-101" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-101">
+    <span class="facets-filter-link"
+      >
+      Accès piste de ski
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-106 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Accès plage"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="106"
+     autocomplete="off"
+    id="filter-ambiance-106" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-106">
+    <span class="facets-filter-link"
+      >
+      Accès plage
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-64111 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Calme"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="64111"
+     autocomplete="off"
+    id="filter-ambiance-64111" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-64111">
+    <span class="facets-filter-link"
+      >
+      Calme
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-131 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Guinguette"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="131"
+     autocomplete="off"
+    id="filter-ambiance-131" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-131">
+    <span class="facets-filter-link"
+      >
+      Guinguette
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-64116 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Confort"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="64116"
+     autocomplete="off"
+    id="filter-ambiance-64116" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-64116">
+    <span class="facets-filter-link"
+      >
+      Confort
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-64661 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Gourmet-Restaurant"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="64661"
+     autocomplete="off"
+    id="filter-ambiance-64661" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-64661">
+    <span class="facets-filter-link"
+      >
+      Gourmet-Restaurant
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-64656 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Hotel-Restaurant"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="64656"
+     autocomplete="off"
+    id="filter-ambiance-64656" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-64656">
+    <span class="facets-filter-link"
+      >
+      Hotel-Restaurant
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-65356 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Moderne"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="65356"
+     autocomplete="off"
+    id="filter-ambiance-65356" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-65356">
+    <span class="facets-filter-link"
+      >
+      Moderne
+          </span>
+  </label>
+
+</div>
+                              
+<div class="filter-item filter-item-ambiance-156 form-item form-checkbox "
+  attr-gtm-jsevent="click"
+  attr-gtm-event="facet.click"
+  attr-gtm-type="ambiance"
+  attr-gtm-title="Péniche"
+  attr-gtm-status="unselected">
+
+  <input type="checkbox" class="facets-filter-checkbox"
+    attr-filter-type="taxonomy_term" value="156"
+     autocomplete="off"
+    id="filter-ambiance-156" attr-filter-name="ambiance" />
+
+  <label for="filter-ambiance-156">
+    <span class="facets-filter-link"
+      >
+      Péniche
+          </span>
+  </label>
+
+</div>
+                            <div class="view-less-link">- Masquer tous les filtres Cadre ou Ambiance</div>
+            </div>
+                      </div>
+        </div>
+              </div>
+      <!-- closing accordion -->
+    </div>
+  </div>
+
+  <div class="show-expanded row-wrapper bottom-fixed">
+    <div class="filter-item filter-item-clear-filters form-item form-button form-reset">
+      <a href="/restaurants/france" id="clear-filters">Effacer tous les filtres</a>
+    </div>
+
+    <div class="filter-item filter-item-invoke-search form-item form-button form-submit">
+      <input type="button" id="invoke-search" class=""
+        value="Voir les 604 restaurants" />
+    </div>
+  </div>
+
+</div>
+          </div>
+</div>
+        </div>
+      
+      <div class="panel-panel panels-content-main-left">
+        <div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-result">
+  <div class="panel-pane-inside">
+                        <ul class="poi-search-result"><li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le Jardin des Remparts">
+  <a href="/28u6ql7/le-jardin-des-remparts-beaune" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="355797" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Le%20Jardin%20des%20Remparts_Beaune_1.jpg?itok=iZG091ly" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Le%20Jardin%20des%20Remparts_Beaune_1.jpg?itok=iZG091ly" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">58 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le Jardin des Remparts        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              3 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Végétarien; Végétalien              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                32 € à 100 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Frédéric Doucet">
+  <a href="/295q5w8/frederic-doucet-charolles" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="99781" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Frederic-Doucet_Charolles_2.jpg?itok=dKsdX_NZ" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Frederic-Doucet_Charolles_2.jpg?itok=dKsdX_NZ" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">60 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Frédéric Doucet        </div>
+
+        <div class="poi_card-display-offers">
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Cuisine Régionale Française              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                45 € à 95 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le 39V">
+  <a href="/2fd19do/le-39v-paris-08" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="158021" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Le-39v_Paris_1.jpg?itok=miEcY7SV" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Le-39v_Paris_1.jpg?itok=miEcY7SV" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">42 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le 39V        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              4 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Traditionnel, Classique; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                39.5 € à 155 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Agapé">
+  <a href="/2eo1t6h/agape-paris-17" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="113926" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/iISK-1u8sxhxOIPA.jpg?itok=cHlbsN1m" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/iISK-1u8sxhxOIPA.jpg?itok=cHlbsN1m" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">96 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Agapé        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              5 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                44 € à 152 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le Pré Catelan">
+  <a href="/2af46v7/le-pre-catelan-paris-16" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="312562" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/0hRsy7Bia6daVRlQ.jpg?itok=pRPNz8E-" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/0hRsy7Bia6daVRlQ.jpg?itok=pRPNz8E-" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation3etoiles"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>            <span class="poi_card-display-reviews-count">127 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le Pré Catelan        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              2 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                130 € à 280 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Auberge de l'Île Barbe">
+  <a href="/29tj1pj/auberge-de-lile-barbe-lyon-09" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="246211" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Untitled-1_4.jpg?itok=fr8whjlb" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Untitled-1_4.jpg?itok=fr8whjlb" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">69 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Auberge de l&#039;Île Barbe        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              2 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Traditionnel, Classique; Cuisine Moderne, Créative; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                50 € à 158 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le Saint-Estève">
+  <a href="/2x1lce26/le-saint-esteve-le-tholonet" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="231356" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/_ALP7446__web_83.jpg?itok=k-2K-HRP" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/_ALP7446__web_83.jpg?itok=k-2K-HRP" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">31 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le Saint-Estève        </div>
+
+        <div class="poi_card-display-offers">
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Végétarien              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                59 € à 149 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="JY'S">
+  <a href="/298563e/jys-colmar" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="114536" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/neSjqRQNH368J02w.jpg?itok=nTaMX-6A" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/neSjqRQNH368J02w.jpg?itok=nTaMX-6A" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation2etoiles"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">62 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          JY&#039;S        </div>
+
+        <div class="poi_card-display-offers">
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                45 € à 85 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Les Pêcheurs">
+  <a href="/29ol879/les-pecheurs-antibes" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="209541" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/ZrTrKFWWFI4AIlDA.jpg?itok=OJ5PM75B" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/ZrTrKFWWFI4AIlDA.jpg?itok=OJ5PM75B" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="N icon-mr icon-cercle01 last"></li></ul>            <span class="poi_card-display-reviews-count">25 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Les Pêcheurs        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              3 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Méditerranéen; Poissons, Fruits de Mer; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                85 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="La table de Franck Putelat">
+  <a href="/2e06z2s/la-table-de-franck-putelat-carcassonne" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="42361" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/HyT4eG2a2VwUFjcg.jpg?itok=6tCHezH8" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/HyT4eG2a2VwUFjcg.jpg?itok=6tCHezH8" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation2etoiles"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">59 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          La table de Franck Putelat        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              3 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Végétarien              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                40 € à 160 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le Restaurant">
+  <a href="/2cfem9h/le-restaurant-paris-06" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="44266" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/HTTNiiOHKjZgVb4w.jpg?itok=Ew05z8BW" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/HTTNiiOHKjZgVb4w.jpg?itok=Ew05z8BW" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">61 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le Restaurant        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              5 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                35 € à 124 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Christophe Bacquié">
+  <a href="/2bmu0gi/christophe-bacquie-le-castellet" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="10211" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Christophe-Bacqui%C3%A9_Le-Castellet_3.jpg?itok=A5T7P9Rt" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/Christophe-Bacqui%C3%A9_Le-Castellet_3.jpg?itok=A5T7P9Rt" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation2etoiles"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>            <span class="poi_card-display-reviews-count">80 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Christophe Bacquié        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              7 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Provençal              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                135 € à 240 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="La Tour des Vents">
+  <a href="/28vws7k/la-tour-des-vents-monbazillac" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="2501" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/yHRE6VeDcmh62HTQ.jpg?itok=jb-jVOV3" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/yHRE6VeDcmh62HTQ.jpg?itok=jb-jVOV3" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">29 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          La Tour des Vents        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              1 offre            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Traditionnel, Classique; Végétarien              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                29 € à 75 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Le Violon d'Ingres">
+  <a href="/2aa5u1w/le-violon-dingres-paris-07" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="297701" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/4_176.jpg?itok=xOP-O3v0" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/4_176.jpg?itok=xOP-O3v0" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">223 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Le Violon d&#039;Ingres        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              3 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Traditionnel, Classique; Cuisine Moderne, Créative              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                49 € à 130 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Les Tablettes de Jean-Louis Nomicos">
+  <a href="/2fdwgd3/les-tablettes-de-jean-louis-nomicos-paris-16" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="161136" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/WyRmO_SI4yICJoow.jpg?itok=l5NW8Ijh" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/WyRmO_SI4yICJoow.jpg?itok=l5NW8Ijh" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">100 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Les Tablettes de Jean-Louis Nomicos        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              6 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                58 € à 141 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="Paul Bocuse">
+  <a href="/29tbf1t/paul-bocuse-collonges-au-mont-dor" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="246596" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/bocuse2_0.jpg?itok=UXFCk6i3" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/bocuse2_0.jpg?itok=UXFCk6i3" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation3etoiles"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">89 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          Paul Bocuse        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              3 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Traditionnel, Classique; Gastronomique; Lyonnais              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                170 € à 275 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="La Liégeoise">
+  <a href="/2fa1zgi202/la-liegeoise-wimereux" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="368952" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/ZwRmigI9Yb-__Dew.jpg?itok=YdaDTQGo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/ZwRmigI9Yb-__Dew.jpg?itok=YdaDTQGo" width="380" height="180" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03 last"></li></ul>            <span class="poi_card-display-reviews-count">34 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          La Liégeoise        </div>
+
+        <div class="poi_card-display-offers">
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                49 € à 79 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+<li>
+<div  class="ds-1col node node--poi view-mode-poi_card node--poi-card node--poi--poi-card clearfix"
+  attr-gtm-jsevent="click"
+  attr-gtm-event="wrapper.click"
+  attr-gtm-type="poi"
+  attr-gtm-title="L'Orangerie du Château">
+  <a href="/28xeo4n/lorangerie-du-chateau-blois" class="poi-card-link"
+    attr-type="bookable"
+    attr-id="29246" >
+
+    <div class="poi_card-picture">
+      <img data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/cpSaWktw6mwHjyYg.jpg?itok=tSxYK6Jp" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" width="380" height="180" alt="" title="" /><noscript><img src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/styles/380x180/public/cpSaWktw6mwHjyYg.jpg?itok=tSxYK6Jp" width="380" height="180" alt="" title="" /></noscript>              <div class="poi_card-display-guide">
+          <div class="guide">Guide MICHELIN 2017<span class="guide-icon icon-mr icon-cotation1etoile"></span></div>
+        </div>
+          </div>
+
+    <div class="poi_card-details">
+
+      <div class="poi_card-description">
+        <div class="poi_card-display-stars">
+                      <ul class="review-stars"><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="O icon-mr icon-cercle03"></li><li class="D icon-mr icon-cercle02 last"></li></ul>            <span class="poi_card-display-reviews-count">43 avis sur ce restaurant</span>
+                  </div>
+
+        <div class="poi_card-display-title">
+          L&#039;Orangerie du Château        </div>
+
+        <div class="poi_card-display-offers">
+                      <div class="mtpb2c-offers">
+              4 offres            </div>
+                  </div>
+      </div>
+
+      <div class="poi_card-other-info">
+                  <div class="poi_card-other-info-block">
+            <div class="poi_card-other-info-inside">
+
+              <div class="poi_card-display-cuisines">
+                Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique              </div>
+
+                            <span class="separator">|</span>
+              
+              <div class="poi_card-display-price">
+                39 € à 112 €              </div>
+
+            </div>
+          </div>
+              </div>
+
+    </div>
+
+  </a>
+</div>
+</li>
+</ul><div class="pager-wrapper"><div class="item-list-first"><div class="item-list"><ul class="pager mr-pager-first-level-links"><li class="mr-pager-item  active first"><span  class="mr-pager-link active" attr-page-number="1">1</span></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-2"  class="mr-pager-link" attr-page-number="2">2</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-3"  class="mr-pager-link" attr-page-number="3">3</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-4"  class="mr-pager-link" attr-page-number="4">4</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-5"  class="mr-pager-link" attr-page-number="5">5</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-6"  class="mr-pager-link" attr-page-number="6">6</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-7"  class="mr-pager-link" attr-page-number="7">7</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-8"  class="mr-pager-link" attr-page-number="8">8</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-9"  class="mr-pager-link" attr-page-number="9">9</a></li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-10"  class="mr-pager-link" attr-page-number="10">10</a></li>
+<li class="mr-pager-item mr-pager-plus"><span>Plus</span></li>
+<li class="mr-pager-item mr-pager-placeholder">...</li>
+<li class="mr-pager-item"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-34"  class="mr-pager-link" attr-page-number="34">34</a></li>
+<li class="mr-pager-item last"><span href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-34"  class="mr-pager-link mr-pager-link-next" attr-page-number="2" attr-vsm="L3Jlc3RhdXJhbnRzL2ZyYW5jZS9yZXN0YXVyYW50cy0xLWV0b2lsZS1taWNoZWxpbi9yZXN0YXVyYW50cy0yLWV0b2lsZXMtbWljaGVsaW4vcmVzdGF1cmFudHMtMy1ldG9pbGVzLW1pY2hlbGluL3BhZ2UtMg==">&raquo;</span></li>
+</ul></div></div><div class="item-list-second"><div class="item-list"><ul class="pager mr-pager-second-level-links"><li class="mr-pager-item first"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-20"  class="mr-pager-link" attr-page-number="20">20</a></li>
+<li class="mr-pager-item last"><a href="/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/page-30"  class="mr-pager-link" attr-page-number="30">30</a></li>
+</ul></div></div></div>          </div>
+</div>
+      </div>
+    </div>
+    <!-- /.panels-content-main-leftwrapper-->
+
+    <div id="panels-content-main-rightwrapper" class="panels-content-main-rightwrapper">
+      <div class="panel-panel panels-content-main-right">
+        <div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-map">
+  <div class="panel-pane-inside">
+                        <div class="michelin-map-wrapper"><div class="overlay-layer"></div><div id="michelin-search-results-map" class="michelin-map"></div></div>          </div>
+</div>
+      </div>
+    </div>
+    <!-- /.panels-content-main-rightwrapper-->
+
+  </div>
+
+      <div class="panels-content-bottom-wrapper">
+      <div class="panel-panel panels-content-bottom">
+        <div class="panel-pane pane-block pane-ft-b2c-poi-search-ft-b2c-poi-search-filters">
+  <div class="panel-pane-inside">
+                        <form class="ft-b2c-poi-search-filters-form" action="/search-restaurants" method="get" id="ft-b2c-poi-search-filters-form" accept-charset="UTF-8"><div><input type="hidden" name="localisation" value="1424" />
+<input type="hidden" name="cooking_type" value="" />
+<input type="hidden" name="gm_selection" value="" />
+<input type="hidden" name="stars" value="1||2||3" />
+<input type="hidden" name="bib_gourmand" value="" />
+<input type="hidden" name="piecette" value="" />
+<input type="hidden" name="michelin_plate" value="" />
+<input type="hidden" name="services" value="" />
+<input type="hidden" name="ambiance" value="" />
+<input type="hidden" name="booking_activated" value="" />
+<input type="hidden" name="min_price" value="" />
+<input type="hidden" name="max_price" value="" />
+<input type="hidden" name="number_of_offers" value="" />
+<input type="hidden" name="prev_localisation" value="1424" />
+<input type="hidden" name="latitude" value="" />
+<input type="hidden" name="longitude" value="" />
+<input type="hidden" name="bbox_ne_lat" value="" />
+<input type="hidden" name="bbox_ne_lon" value="" />
+<input type="hidden" name="bbox_sw_lat" value="" />
+<input type="hidden" name="bbox_sw_lon" value="" />
+<input type="hidden" name="page_number" value="" />
+<input class="use-ajax-submit form-submit" type="submit" id="edit-submit" name="op" value="Rechercher" /><input type="hidden" name="form_build_id" value="form-ntUTIUaszSc0g_w70DALftWwRPfryXZ0nyeFWpH52PM" />
+<input type="hidden" name="form_id" value="ft_b2c_poi_search_filters_form" />
+</div></form>          </div>
+</div>
+      </div>
+    </div>
+  
+</div>
+      </div>
+    </div>
+
+          <div class="l-main-suffix">
+          <div class="l-region l-region--main-suffix">
+    <div id="block-views-city-list-inline-city-top" class="block block--views block--views-city-list-inline-city-top">
+        <h2  class="block__title">Top Villes</h2>
+      <div class="block__content">
+    <div class="view view-city-list view-id-city_list view-display-id-inline_city_top view-dom-id-1aaa96a72b014a0c5ebf7ccd82edd9eb">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris">Paris</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bordeaux">Bordeaux</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/nantes">Nantes</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/strasbourg">Strasbourg</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon">Lyon</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even views-row-last">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lille">Lille</a></div></div></div></div>
+
+  </div>
+    </div>
+  
+  
+      <div class="attachment attachment-after">
+      <a href="/recherche-restaurants" class="restaurant-directory-link">Annuaire des restaurants</a>    </div>
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+      </div>
+    
+    <footer class="l-footer" role="contentinfo">
+      <div class="l-footer-inner">
+        <div class="l-footer-top">
+                  </div>
+        <div class="l-footer-top-suffix">
+                  </div>
+        <div class="l-footer-middle">
+            <div class="l-region l-region--footer-middle">
+    <nav id="block-menu-menu-corporate-menu-1" role="navigation" class="block block--menu block--menu-menu-corporate-menu-1">
+      <div  class="block__title">Restaurateurs</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-2" role="navigation" class="block block--menu block--menu-menu-corporate-menu-2">
+      <div  class="block__title">Suivez-nous</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-3" role="navigation" class="block block--menu block--menu-menu-corporate-menu-3">
+      <div  class="block__title">Nos autres services</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-4" role="navigation" class="block block--menu block--menu-menu-corporate-menu-4">
+      <div  class="block__title">MICHELIN GROUPE</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul></nav>
+<div id="block-ft-b2c-footer-blocks-footer-newsletter" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-newsletter">
+        <div class="newsletter-primary-title">
+      <div  class="block__title">Newsletter MICHELIN Restaurants</div>
+    </div>
+
+          <div class="newsletter-secondary-title">
+        <div  class="block__title">Profitez des bons plans MICHELIN Restaurants en vous inscrivant à la newsletter :</div>
+      </div>
+      
+  
+  <div class="block__content">
+    <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form" action="/2adb5o5/benkay-paris-15" method="post" id="ft-b2c-footer-blocks-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--2" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-vAUR4AscN_djT-j8HQaYagk3u_WbGOklWFSNfCn2hUQ" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>  </div>
+</div>
+<div id="block-accordion-blocks-footer-menu-and-newsletter-1" class="block block--accordion-blocks block--accordion-blocks-footer-menu-and-newsletter-1">
+        <h2  class="block__title">Footer menu and newsletter</h2>
+      <div class="block__content">
+    <div class="accordion_blocks_container">
+        <h2><a href="#">
+          Restaurateurs        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Suivez-nous        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Nos autres services        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          MICHELIN GROUPE        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Newsletter MICHELIN Restaurants        </a></h2>
+    <div>
+      <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form--2" action="/2adb5o5/benkay-paris-15" method="post" id="ft-b2c-footer-blocks-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email--2" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-wkSfCm1O9iP0JBi3KoQ5z6coBwoLomV4uSG9MNLkdbA" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>    </div>
+    </div>
+  </div>
+</div>
+  </div>
+        </div>
+        <div class="l-footer-sub-bottom">
+            <div class="l-region l-region--footer-sub-bottom">
+    <nav id="block-menu-menu-social-networks-left" role="navigation" class="block block--menu block--menu-menu-social-networks-left">
+      <div  class="block__title">Téléchargez notre application iOS</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-left clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-left">
+  <div class="content">
+    <a href="https://itunes.apple.com/fr/app/michelin-restaurants-recherche/id523153222?mt=8" target="_blank" class="first last leaf icon-mr icon-apps"></a>  </div>
+</div>
+</li>
+</ul></nav>
+<nav id="block-menu-menu-social-networks-right" role="navigation" class="block block--menu block--menu-menu-social-networks-right">
+      <div  class="block__title">Téléchargez notre application Android</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-right clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-right">
+  <div class="content">
+    <a href="https://play.google.com/store/apps/details?id=com.viamichelin.android.gm21" target="_blank" class="first last leaf icon-mr icon-android"></a>  </div>
+</div>
+</li>
+</ul></nav>
+  </div>
+        </div>
+        <div class="l-footer-bottom">
+            <div class="l-region l-region--footer-bottom">
+    <div id="block-ft-b2c-footer-blocks-footer-copyright" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-copyright">
+        <div class="block__content">
+    <div class="footer-copyright-wrapper">
+ <div class="copyright-text">
+   &copy; MICHELIN 2018 </div>
+ <div class="copyright-menu">
+        <ul class="menu"><li class="first leaf"><a href="/conditions-generales-dutilisation">CGU</a></li>
+<li class="leaf"><a href="/donnees-personnelles">Données personnelles</a></li>
+<li class="leaf"><a href="/notice-legale">Notice légale</a></li>
+<li class="last leaf"><a href="/contactez-nous">Contactez-nous</a></li>
+</ul>    </div>
+</div>
+<div class="footer-logo">
+  <img class="footer-logo" id="footer-copyright-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="Michelin logo" title="Michelin" /><noscript><img class="footer-logo" id="footer-copyright-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" alt="Michelin logo" title="Michelin" /></noscript></div>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+        <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript>
+<nav id="mr-b2c-sliding-menu">
+  <div class="menu-top-sliding-menu-one-wrapper">
+    <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/magazine" class="first leaf icon-mr icon-partagez">Magazine</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/instants-michelin" class="leaf icon-mr icon-profitez">Instants MICHELIN</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/guide-michelin" class="last leaf icon-mr icon-decouvrez">Guide MICHELIN</a>  </div>
+</div>
+</li>
+</ul>  </div>
+
+  <div class="menu-top-sliding-menu-two-wrapper">
+    <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Informations Restaurateurs</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Accès Restaurateurs</a></li>
+</ul>  </div>
+</nav>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_uHs5ccNEBHM6vesdaL6KU4x9j1HPpDCs3zuA42lw7KA.js"></script>
+<script>      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: 0, icon: "" });
+          }
+        };
+      }(jQuery));</script>
+
+<!--[if lt IE 9]>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_q2d-qES5qoOARLZdLHKA3SOiGW20v1kS9ST2I3uipgc.js"></script>
+<![endif]-->
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_07j5zJCluA4uMWVWpNYSIuMyavDvmrARp9lYluJB8uU.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"778b962005","applicationID":"52774854","transactionName":"bwdRbBdUWUVRV0VaWVZNZkoMGl5YVFFJHUZQEg==","queueTime":0,"applicationTime":18,"atts":"Q0BSGl9OSks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

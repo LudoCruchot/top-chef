@@ -1,35 +1,75 @@
-var express = require('express');
-var fs = require('fs');
+// cd /ESILV/annee4/WebApplication/top-chef/docs/scraping
+
+//var express = require('express');
+//var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
-var app     = express();
 
-app.get('/scrape', function(req, res){
-    // The URL we will scrape from - in our example Anchorman 2.
+var url='https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin';
 
-    url = 'https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin';
+var url='https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin';
+var pageMax=0;
 
-    // The structure of our request call
-    // The first parameter is our URL
-    // The callback function takes 3 parameters, an error, response status code and the html
+function ScrapingPages(){
+	AmountPages(function(err,results){
+		//console.log(err,pageMax);
+		console.log("Nombre de pages de restos:",pageMax);
 
-    request(url, function(error, response, html){
+		var i;
+		for(i=0;i<pageMax+1;i++)
+		{
+			ScrapingPage(i);
+		}
 
-        // First we'll check to make sure no errors occurred when making the request
 
-        if(!error){
-            // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+	});
+}
 
-            var $ = cheerio.load(html);
+function AmountPages(callback){
 
-            // Finally, we'll define the variables we're going to capture
+	//var pageMax=0;
 
-            var title, release, rating;
-            var json = { title : "", release : "", rating : ""};
-        }
-    })
-})
+	request(url, function(error, response, html){
 
-app.listen('8081')
-console.log('Magic happens on port 8081');
-exports = module.exports = app;
+		if(!error){
+			var $ = cheerio.load(html);
+
+			$('li.mr-pager-item').each(function(i,element){
+
+				var data= $(this).text();
+
+				if(parseInt(data)>pageMax)
+				{
+					pageMax=parseInt(data);
+				}
+
+			});
+			callback(null,pageMax);
+		}
+	});
+}
+
+function ScrapingPage(pageNumber){
+	var url = 'https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin';
+	if(pageNumber>0)
+	{
+		url='https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin'+'/page-'+pageNumber;
+	}
+
+	request(url, function(error, response, html){
+		if(!error){
+			var $ = cheerio.load(html);
+			var name;
+
+			$('[attr-gtm-type="poi"]').each(function(i,element){
+				var data = $(this).attr('attr-gtm-title');
+				name=data;
+				console.log(name);
+			});
+		}
+
+	});
+
+}
+
+ScrapingPages();
