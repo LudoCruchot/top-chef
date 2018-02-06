@@ -66,7 +66,6 @@ function ScrapingPage(pageNumber){
 			var stars;
 			var food;
 			var price;
-			var secondURL="https://restaurant.michelin.fr";
 
 			// on passe deux boucles pour les 604 restos, optimiser pour n'en faire qu'une
 
@@ -107,9 +106,9 @@ function ScrapingPage(pageNumber){
 				// getting URL for address
 				var data5= $(this).children('a').attr('href'); // pb concatene plusieurs URL de resto
 
-				secondURL=secondURL+data5;
+				var secondURL="https://restaurant.michelin.fr"+data5;
 
-				request(secondURL,function(error,response,html){
+				/* request(secondURL,function(error,response,html){
 					//getting address on the page of the restaurant
 
 					if(!error){
@@ -122,10 +121,12 @@ function ScrapingPage(pageNumber){
 
 					}
 
-				}); 
+				}); */
+
+
 
 				console.log(secondURL);
-				console.log(name+" "+stars+" "+food+" "+price);
+				//console.log(name+" "+stars+" "+food+" "+price);
 			});  
 
 		}
