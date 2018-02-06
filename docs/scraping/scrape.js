@@ -64,20 +64,25 @@ function ScrapingPage(pageNumber){
 			var $ = cheerio.load(html);
 			var name;
 			var stars;
+			var food;
+			var price;
+			var secondURL="https://restaurant.michelin.fr";
 
 			// on passe deux boucles pour les 604 restos, optimiser pour n'en faire qu'une
 
 			
 
 			$('[attr-gtm-type="poi"]').each(function(i,element){
+
+				// getting the name
 				var data1 = $(this).attr('attr-gtm-title');
 				name=data1;
 
+				// getting the number of stars
 				var data2= $(this).children('a').children().children().children().children().attr('class');
-				stars=data2;
 
-				var arrayOfStrings = data2.split(" ");
-				var starTemp=arrayOfStrings[2];
+				var starsHtml = data2.split(" ");
+				var starTemp=starsHtml[2];
 
 				if(starTemp=="icon-cotation1etoile")
 					stars="Une étoile";
@@ -86,13 +91,54 @@ function ScrapingPage(pageNumber){
 				else if(starTemp=="icon-cotation3etoiles")
 					stars="Trois étoiles";
 				
-				console.log(name+"  "+stars);
-				//console.log(stars);
+
+				// getting the type of food
+				var data3= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(0).text();
+
+				data3=data3.trim(); // delete spaces before after
+				food=data3;
+
+				// getting the price
+				var data4= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(1).text();
+
+				data4=data4.trim();
+				price=data4;
+
+				// getting URL for address
+				var data5= $(this).children('a').attr('href'); // pb concatene plusieurs URL de resto
+
+				secondURL=secondURL+data5;
+
+				request(secondURL,function(error,response,html){
+					//getting address on the page of the restaurant
+
+					if(!error){
+						var $ = cheerio.load(html);
+						var adress;
+
+						var ad=$('[class="opt-upper-var2__address-text"]').children('div').eq(0).attr('class');
+
+						console.log(ad);
+
+					}
+
+				}); 
+
+				console.log(secondURL);
+				console.log(name+" "+stars+" "+food+" "+price);
 			});  
 
 		}
 
 	});
+
+}
+
+function JsonConstructor(){
+// create ajson file with the informations scraped on the webpage
+
+
+
 
 }
 
