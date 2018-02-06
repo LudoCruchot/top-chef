@@ -70,19 +70,13 @@ function ScrapingPage(pageNumber){
 			
 
 			$('[attr-gtm-type="poi"]').each(function(i,element){
-				var data = $(this).attr('attr-gtm-title');
-				name=data;
-				console.log(name);
-			});  
+				var data1 = $(this).attr('attr-gtm-title');
+				name=data1;
 
-			$('div.guide').each(function(i,element){
-				//var data = $(this).text();
-				//stars=data;
+				var data2= $(this).children('a').children().children().children().children().attr('class');
+				stars=data2;
 
-				//get the name of the children class to know the number of stars
-				var data = $(this).children().attr('class');
-
-				var arrayOfStrings = data.split(" ");
+				var arrayOfStrings = data2.split(" ");
 				var starTemp=arrayOfStrings[2];
 
 				if(starTemp=="icon-cotation1etoile")
@@ -91,12 +85,10 @@ function ScrapingPage(pageNumber){
 					stars="Deux étoiles";
 				else if(starTemp=="icon-cotation3etoiles")
 					stars="Trois étoiles";
-
-				console.log(stars);
-
-
-			});
-
+				
+				console.log(name+"  "+stars);
+				//console.log(stars);
+			});  
 
 		}
 
