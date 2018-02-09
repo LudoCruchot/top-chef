@@ -104,11 +104,12 @@ function ScrapingPage(pageNumber){
 				price=data4;
 
 				// getting URL for address
-				var data5= $(this).children('a').attr('href'); // pb concatene plusieurs URL de resto
+				var data5= $(this).children('a').attr('href');
 
 				var secondURL="https://restaurant.michelin.fr"+data5;
 
-				/* request(secondURL,function(error,response,html){
+				// request pour chopper les adresses
+				request(secondURL,function(error,response,html){  // FONCTIONNE PAS ENCORE
 					//getting address on the page of the restaurant
 
 					if(!error){
@@ -117,16 +118,17 @@ function ScrapingPage(pageNumber){
 
 						var ad=$('[class="opt-upper-var2__address-text"]').children('div').eq(0).attr('class');
 
-						console.log(ad);
-
+						//console.log(ad);
 					}
 
-				}); */
+				});
 
 
 
 				console.log(secondURL);
 				//console.log(name+" "+stars+" "+food+" "+price);
+				//JsonConstructor(name,stars,food,price);
+
 			});  
 
 		}
@@ -135,10 +137,12 @@ function ScrapingPage(pageNumber){
 
 }
 
-function JsonConstructor(){
+function JsonConstructor(jname,jstars,jfood,jprice){
 // create ajson file with the informations scraped on the webpage
 
+var jsonFile='{ "name":"'+jname+'", "stars":"'+jstars+'", "food_type":"'+jfood+'", "price":"'+jprice+'"}';
 
+console.log(jsonFile);
 
 
 }
