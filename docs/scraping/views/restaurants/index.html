@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h2>Restaurants</h2>
+
+	{% for r in restaurants %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{r.name}}
+			</div>
+			<div class="panel-content">
+				{{r.food}}
+			</div>
+		</div>
+
+
+	{% endfor %}
+{% endblock %}

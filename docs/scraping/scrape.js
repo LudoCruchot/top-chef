@@ -66,6 +66,11 @@ function ScrapingPage(pageNumber){
 			var stars;
 			var food;
 			var price;
+			var address;
+			var postalCode;
+			var city;
+
+			var jsonResto={};
 
 			// on passe deux boucles pour les 604 restos, optimiser pour n'en faire qu'une
 
@@ -75,7 +80,7 @@ function ScrapingPage(pageNumber){
 
 				// getting the name
 				var data1 = $(this).attr('attr-gtm-title');
-				name=data1;
+				jsonResto.name=data1;
 
 				// getting the number of stars
 				var data2= $(this).children('a').children().children().children().children().attr('class');
@@ -84,24 +89,24 @@ function ScrapingPage(pageNumber){
 				var starTemp=starsHtml[2];
 
 				if(starTemp=="icon-cotation1etoile")
-					stars="Une étoile";
+					jsonResto.stars="Une étoile";
 				else if(starTemp=="icon-cotation2etoiles")
-					stars="Deux étoiles";
+					jsonResto.stars="Deux étoiles";
 				else if(starTemp=="icon-cotation3etoiles")
-					stars="Trois étoiles";
+					jsonResto.stars="Trois étoiles";
 				
 
 				// getting the type of food
 				var data3= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(0).text();
 
 				data3=data3.trim(); // delete spaces before after
-				food=data3;
+				jsonResto.food=data3;
 
 				// getting the price
 				var data4= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(1).text();
 
 				data4=data4.trim();
-				price=data4;
+				jsonResto.price=data4;
 
 				// getting URL for address
 				var data5= $(this).children('a').attr('href');
@@ -109,41 +114,35 @@ function ScrapingPage(pageNumber){
 				var secondURL="https://restaurant.michelin.fr"+data5;
 
 				// request pour chopper les adresses
-				request(secondURL,function(error,response,html){  // FONCTIONNE PAS ENCORE
+				request(secondURL,function(error,response,html){ 
 					//getting address on the page of the restaurant
 
 					if(!error){
 						var $ = cheerio.load(html);
-						var adress;
 
-						var ad=$('[class="opt-upper-var2__address-text"]').children('div').eq(0).attr('class');
+						//getting address
+						var data1=$('[class="thoroughfare"]').first().text();
+						jsonResto.address=data1;
 
-						//console.log(ad);
+						//getting postal code
+						var data2=$('[class="postal-code"]').first().text();
+						jsonResto.postalCode=data2;
+
+						//getting city
+						var data3=$('[class="locality"]').first().text();
+						jsonResto.city=data3;
+
+						console.log(jsonResto);
+
 					}
 
 				});
-
-
-
-				console.log(secondURL);
-				//console.log(name+" "+stars+" "+food+" "+price);
-				//JsonConstructor(name,stars,food,price);
 
 			});  
 
 		}
 
 	});
-
-}
-
-function JsonConstructor(jname,jstars,jfood,jprice){
-// create ajson file with the informations scraped on the webpage
-
-var jsonFile='{ "name":"'+jname+'", "stars":"'+jstars+'", "food_type":"'+jfood+'", "price":"'+jprice+'"}';
-
-console.log(jsonFile);
-
 
 }
 
