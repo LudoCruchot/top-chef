@@ -4,6 +4,7 @@
 //var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
+var fs =require('fs');
 
 var url='https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin';
 
@@ -29,7 +30,6 @@ function ScrapingPages(){
 function AmountPages(callback){
 // calcul le nombre de pages a scraper
 
-	//var pageMax=0;
 
 	request(url, function(error, response, html){
 
@@ -59,82 +59,91 @@ function ScrapingPage(pageNumber){
 		url='https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin'+'/page-'+pageNumber;
 	}
 
+	var jsonRestos=[];
+
 	request(url, function(error, response, html){
 		if(!error){
 			var $ = cheerio.load(html);
-			var name;
-			var stars;
-			var food;
-			var price;
-			var address;
-			var postalCode;
-			var city;
 
-			var jsonResto={};
+			var jsonRestos=[];
 
-			// on passe deux boucles pour les 604 restos, optimiser pour n'en faire qu'une
-
-			
-
+		
 			$('[attr-gtm-type="poi"]').each(function(i,element){
-
-				// getting the name
-				var data1 = $(this).attr('attr-gtm-title');
-				jsonResto.name=data1;
-
-				// getting the number of stars
-				var data2= $(this).children('a').children().children().children().children().attr('class');
-
-				var starsHtml = data2.split(" ");
-				var starTemp=starsHtml[2];
-
-				if(starTemp=="icon-cotation1etoile")
-					jsonResto.stars="Une étoile";
-				else if(starTemp=="icon-cotation2etoiles")
-					jsonResto.stars="Deux étoiles";
-				else if(starTemp=="icon-cotation3etoiles")
-					jsonResto.stars="Trois étoiles";
-				
-
-				// getting the type of food
-				var data3= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(0).text();
-
-				data3=data3.trim(); // delete spaces before after
-				jsonResto.food=data3;
-
-				// getting the price
-				var data4= $(this).children('a').children('div').eq(1).children('div').eq(1).children().children().children('div').eq(1).text();
-
-				data4=data4.trim();
-				jsonResto.price=data4;
 
 				// getting URL for address
 				var data5= $(this).children('a').attr('href');
 
 				var secondURL="https://restaurant.michelin.fr"+data5;
 
-				// request pour chopper les adresses
+				// request pour chopper les infos sur la page du resto
 				request(secondURL,function(error,response,html){ 
-					//getting address on the page of the restaurant
+					//getting informations on the page of the restaurant
 
 					if(!error){
 						var $ = cheerio.load(html);
 
-						//getting address
-						var data1=$('[class="thoroughfare"]').first().text();
-						jsonResto.address=data1;
+						var jsonResto;
 
-						//getting postal code
-						var data2=$('[class="postal-code"]').first().text();
-						jsonResto.postalCode=data2;
+						var name;
+						var stars;
+						var food;
+						var price;
+						var address;
+						var postalCode;
+						var city;
 
-						//getting city
-						var data3=$('[class="locality"]').first().text();
-						jsonResto.city=data3;
 
+
+						var data1=$('.poi_intro-description > .poi_intro-display-title').text().trim();
+						name=data1;
+						
+						var data2=$('.guide-icon').attr('class').split(" ");
+						var starTemp=data2[2];
+
+						if(starTemp=="icon-cotation1etoile")
+							stars="Une étoile";
+						else if(starTemp=="icon-cotation2etoiles")
+							stars="Deux étoiles";
+						else if(starTemp=="icon-cotation3etoiles")
+							stars="Trois étoiles";
+
+						var data3=$('.poi_intro-display-cuisines').text().trim();
+						food=data3;
+
+						var data4=$('.poi_intro-display-prices').text().trim();
+						price=data4;
+
+						var data5=$('[class="thoroughfare"]').first().text();
+						address=data5;
+
+						var data6=$('[class="postal-code"]').first().text();
+						postalCode=data6;
+
+						var data7=$('[class="locality"]').first().text();
+						city=data7;
+
+						jsonResto={
+							name: name,
+							stars: stars,
+							food: food,
+							price: price,
+							location: {
+								address: address,
+								postalCode: postalCode,
+								city: city
+							}
+						};
+
+						jsonRestos.push(jsonResto);
 						console.log(jsonResto);
 
 					}
+
+					fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
+						if(err){
+							console.log(err);
+						}
+					});
 
 				});
 
@@ -143,7 +152,6 @@ function ScrapingPage(pageNumber){
 		}
 
 	});
-
 }
 
 ScrapingPages();

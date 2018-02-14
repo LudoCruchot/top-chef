@@ -1,0 +1,79 @@
+[
+    {
+        "name": "Le Bénaton",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative",
+        "price": "Prix - De 34 € à 90 €",
+        "location": {
+            "address": "25 Rue du Faubourg-Bretonnière",
+            "postalCode": "21200",
+            "city": "BEAUNE"
+        }
+    },
+    {
+        "name": "L'Essentiel",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative; Végétarien; Végétalien; Traditionnel, Classique",
+        "price": "Prix - De 18 € à 65 €",
+        "location": {
+            "address": "29 Rue Mirabeau",
+            "postalCode": "14800",
+            "city": "DEAUVILLE"
+        }
+    },
+    {
+        "name": "La Marelle",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
+        "price": "Prix - De 42 € à 95 €",
+        "location": {
+            "address": "1593 av. de Lyon",
+            "postalCode": "01960",
+            "city": "Péronnas"
+        }
+    },
+    {
+        "name": "Le Kléber",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative; Gastronomique",
+        "price": "Prix - De 35 € à 74 €",
+        "location": {
+            "address": "6 r. A. -Dumont",
+            "postalCode": "26400",
+            "city": "Crest"
+        }
+    },
+    {
+        "name": "Auguste",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative",
+        "price": "Prix - De 37 € à 100 €",
+        "location": {
+            "address": "54 r. Bourgogne",
+            "postalCode": "75007",
+            "city": "Paris 07"
+        }
+    },
+    {
+        "name": "En Marge",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
+        "price": "Prix - De 34 € à 145 €",
+        "location": {
+            "address": "1204 rte de la Croix-Falgarde",
+            "postalCode": "31320",
+            "city": "AUREVILLE"
+        }
+    },
+    {
+        "name": "Pierre Gagnaire",
+        "stars": "Trois étoiles",
+        "food": "Cuisine Moderne, Créative",
+        "price": "Prix - De 155 € à 350 €",
+        "location": {
+            "address": "6 Rue Balzac",
+            "postalCode": "75008",
+            "city": "Paris 08"
+        }
+    }
+]
