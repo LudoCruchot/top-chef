@@ -18,7 +18,7 @@ function ScrapingPages(){
 		console.log("Nombre de pages de restos:",pageMax);
 
 		var i;
-		for(i=0;i<pageMax+1;i++)
+		for(i=0;i<2/*pageMax+1*/;i++)
 		{
 			ScrapingPage(i);
 		}
@@ -67,7 +67,9 @@ function ScrapingPage(pageNumber){
 
 			var jsonRestos=[];
 
-		
+
+			
+
 			$('[attr-gtm-type="poi"]').each(function(i,element){
 
 				// getting URL for address
@@ -75,83 +77,99 @@ function ScrapingPage(pageNumber){
 
 				var secondURL="https://restaurant.michelin.fr"+data5;
 
-				// request pour chopper les infos sur la page du resto
-				request(secondURL,function(error,response,html){ 
-					//getting informations on the page of the restaurant
+				var promise= new Promise(function(resolve,reject){
 
-					if(!error){
-						var $ = cheerio.load(html);
+					request(secondURL,function(error,response,html){
 
-						var jsonResto;
+						if(!error){
+							var $ = cheerio.load(html);
 
-						var name;
-						var stars;
-						var food;
-						var price;
-						var address;
-						var postalCode;
-						var city;
+							var jsonResto;
+							var name;
+							var stars;
+							var food;
+							var price;
+							var address;
+							var postalCode;
+							var city;
 
+							var data1=$('.poi_intro-description > .poi_intro-display-title').text().trim();
+							name=data1;
+							
+							var data2=$('.guide-icon').attr('class').split(" ");
+							var starTemp=data2[2];
 
+							if(starTemp=="icon-cotation1etoile")
+								stars="Une étoile";
+							else if(starTemp=="icon-cotation2etoiles")
+								stars="Deux étoiles";
+							else if(starTemp=="icon-cotation3etoiles")
+								stars="Trois étoiles";
 
-						var data1=$('.poi_intro-description > .poi_intro-display-title').text().trim();
-						name=data1;
-						
-						var data2=$('.guide-icon').attr('class').split(" ");
-						var starTemp=data2[2];
+							var data3=$('.poi_intro-display-cuisines').text().trim();
+							food=data3;
 
-						if(starTemp=="icon-cotation1etoile")
-							stars="Une étoile";
-						else if(starTemp=="icon-cotation2etoiles")
-							stars="Deux étoiles";
-						else if(starTemp=="icon-cotation3etoiles")
-							stars="Trois étoiles";
+							var data4=$('.poi_intro-display-prices').text().trim();
+							price=data4;
 
-						var data3=$('.poi_intro-display-cuisines').text().trim();
-						food=data3;
+							var data5=$('[class="thoroughfare"]').first().text();
+							address=data5;
 
-						var data4=$('.poi_intro-display-prices').text().trim();
-						price=data4;
+							var data6=$('[class="postal-code"]').first().text();
+							postalCode=data6;
 
-						var data5=$('[class="thoroughfare"]').first().text();
-						address=data5;
+							var data7=$('[class="locality"]').first().text();
+							city=data7;
 
-						var data6=$('[class="postal-code"]').first().text();
-						postalCode=data6;
+							jsonResto={
+								name: name,
+								stars: stars,
+								food: food,
+								price: price,
+								location: {
+									address: address,
+									postalCode: postalCode,
+									city: city
+								}
+							};
 
-						var data7=$('[class="locality"]').first().text();
-						city=data7;
+							resolve(i);
 
-						jsonResto={
-							name: name,
-							stars: stars,
-							food: food,
-							price: price,
-							location: {
-								address: address,
-								postalCode: postalCode,
-								city: city
-							}
-						};
-
-						jsonRestos.push(jsonResto);
-						console.log(jsonResto);
-
-					}
-
-					fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
-						if(err){
-							console.log(err);
 						}
-					});
+
+					}); // fin request
+
+				}); // fin de la promise
+
+				promise.then(function(resto){
+
+					//jsonRestos.push(resto);
+					console.log(resto);
 
 				});
 
-			});  
+				promise.catch(function(e){
+					console.log(e);
+
+				});
+
+				/* SAUVEGARDE
+
+				FIN DE LA SAUVEGARDE */
+
+			});
+
+			
+		
+			
 
 		}
 
 	});
+}
+
+function Test(){
+	console.log('test');
 }
 
 ScrapingPages();

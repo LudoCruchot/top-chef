@@ -1,79 +1,68 @@
 [
     {
-        "name": "Le Bénaton",
+        "name": "Le Chateaubriand",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative",
-        "price": "Prix - De 34 € à 90 €",
+        "price": "Prix - De 70 € à 135 €",
         "location": {
-            "address": "25 Rue du Faubourg-Bretonnière",
-            "postalCode": "21200",
-            "city": "BEAUNE"
+            "address": "129 av. Parmentier",
+            "postalCode": "75011",
+            "city": "Paris"
         }
     },
     {
-        "name": "L'Essentiel",
-        "stars": "Une étoile",
-        "food": "Cuisine Moderne, Créative; Végétarien; Végétalien; Traditionnel, Classique",
-        "price": "Prix - De 18 € à 65 €",
-        "location": {
-            "address": "29 Rue Mirabeau",
-            "postalCode": "14800",
-            "city": "DEAUVILLE"
-        }
-    },
-    {
-        "name": "La Marelle",
-        "stars": "Une étoile",
-        "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
-        "price": "Prix - De 42 € à 95 €",
-        "location": {
-            "address": "1593 av. de Lyon",
-            "postalCode": "01960",
-            "city": "Péronnas"
-        }
-    },
-    {
-        "name": "Le Kléber",
-        "stars": "Une étoile",
-        "food": "Cuisine Moderne, Créative; Gastronomique",
-        "price": "Prix - De 35 € à 74 €",
-        "location": {
-            "address": "6 r. A. -Dumont",
-            "postalCode": "26400",
-            "city": "Crest"
-        }
-    },
-    {
-        "name": "Auguste",
+        "name": "La Table d'Hôtes - Le Quatrième Mur",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative",
-        "price": "Prix - De 37 € à 100 €",
+        "price": "Prix moyen - 150 €",
         "location": {
-            "address": "54 r. Bourgogne",
+            "address": "2 pl. de la Comédie",
+            "postalCode": "33000",
+            "city": "Bordeaux"
+        }
+    },
+    {
+        "name": "Jérôme Feck",
+        "stars": "Une étoile",
+        "food": "Cuisine Moderne, Créative",
+        "price": "Prix - De 65 € à 108 €",
+        "location": {
+            "address": "19 pl. Mgr-Tissier",
+            "postalCode": "51000",
+            "city": "Châlons-en-Champagne"
+        }
+    },
+    {
+        "name": "Divellec",
+        "stars": "Une étoile",
+        "food": "Poissons, Fruits de Mer",
+        "price": "Prix - De 49 € à 210 €",
+        "location": {
+            "address": "18 r. Fabert",
             "postalCode": "75007",
-            "city": "Paris 07"
+            "city": "Paris"
         }
     },
     {
-        "name": "En Marge",
+        "name": "Ima",
         "stars": "Une étoile",
-        "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
-        "price": "Prix - De 34 € à 145 €",
+        "food": "Cuisine Moderne, Créative",
+        "price": "Prix - De 30 € à 78 €",
         "location": {
-            "address": "1204 rte de la Croix-Falgarde",
-            "postalCode": "31320",
-            "city": "AUREVILLE"
+            "address": "20 bd de la Tour-d'Auvergne",
+            "postalCode": "35000",
+            "city": "Rennes"
         }
     },
     {
-        "name": "Pierre Gagnaire",
-        "stars": "Trois étoiles",
-        "food": "Cuisine Moderne, Créative",
-        "price": "Prix - De 155 € à 350 €",
+        "name": "Sushi B",
+        "stars": "Une étoile",
+        "food": "Japonais",
+        "price": "Prix - De 58 € à 160 €",
         "location": {
-            "address": "6 Rue Balzac",
-            "postalCode": "75008",
-            "city": "Paris 08"
+            "address": "5 r. Rameau",
+            "postalCode": "75002",
+            "city": "Paris"
         }
     }
 ]
