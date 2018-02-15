@@ -46,7 +46,7 @@ function ScrapingPages(){
 		var compteur=0;
 		
 		var i;
-		for(i=0;i<2;i++)
+		for(i=0;i<pageMax;i++)
 		{
 
 				var pageNumber=i;
@@ -126,20 +126,18 @@ function ScrapingPages(){
 							}) // fin promise
 							.then(function(result){
 								jsonRestos.push(result);
-								console.log('Resto added '+secondURL);
-								console.log("Nombre de restos dans le tab: "+jsonRestos.length);
-								console.log("Nombre restos total "+nbRestos);
+								//console.log('Resto added '+secondURL);
+								//console.log("Nombre de restos dans le tab: "+jsonRestos.length);
+								//console.log("Nombre restos total "+nbRestos);
 
 								if(jsonRestos.length==nbRestos){
-									fs.writeFile('TEST_info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
+									fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
 										if(err){
 											console.log(err);
 										}
 										console.log("Fichier JSON créé avec succès");
 									}); // fin writeFile
 								}
-
-
 
 							})
 							.catch(function(error){
