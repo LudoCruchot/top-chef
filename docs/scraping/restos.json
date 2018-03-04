@@ -5,7 +5,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 52 € à 215 €",
-        "promotion": "",
+        "promotion": "Menu Prestige 72€",
         "location": {
             "address": "51 Rue Jouffroy-d'Abbans",
             "postalCode": "75017",
@@ -70,7 +70,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Traditionnel, Classique; Gastronomique",
         "price": "Prix - De 39.5 € à 155 €",
-        "promotion": "",
+        "promotion": "Menu Mardis Gourmands 135€ le soir",
         "location": {
             "address": "39 Avenue George V",
             "postalCode": "75008",
@@ -109,7 +109,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Végétarien; Végétalien",
         "price": "Prix - De 32 € à 100 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "10 rue Hôtel-Dieu",
             "postalCode": "21200",
@@ -135,7 +135,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 48 € à 152 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "110 Galerie de Valois - Jardin du Palais Royal",
             "postalCode": "75001",
@@ -148,7 +148,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Végétarien; Végétalien",
         "price": "Prix - De 32 € à 100 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "10 rue Hôtel-Dieu",
             "postalCode": "21200",
@@ -161,7 +161,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 35 € à 124 €",
-        "promotion": "",
+        "promotion": "-30% off the \"à la carte\" menu!",
         "location": {
             "address": "13 rue des Beaux-Arts",
             "postalCode": "75006",
@@ -174,7 +174,7 @@
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 45 € à 85 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "17 r. de la Poissonnerie",
             "postalCode": "68000",
@@ -187,7 +187,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 39 € à 112 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "1 Avenue du Docteur Jean Laigret",
             "postalCode": "41000",
@@ -200,7 +200,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 48 € à 152 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "110 Galerie de Valois - Jardin du Palais Royal",
             "postalCode": "75001",
@@ -213,7 +213,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 39 € à 112 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "1 Avenue du Docteur Jean Laigret",
             "postalCode": "41000",
@@ -252,7 +252,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 52 € à 215 €",
-        "promotion": "",
+        "promotion": "Menu Prestige 72€",
         "location": {
             "address": "51 Rue Jouffroy-d'Abbans",
             "postalCode": "75017",
@@ -304,7 +304,7 @@
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
         "price": "Prix - De 90 € à 320 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "31 Avenue Franklin Delano Roosevelt",
             "postalCode": "75008",
@@ -343,7 +343,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 35 € à 124 €",
-        "promotion": "",
+        "promotion": "-30% off the \"à la carte\" menu!",
         "location": {
             "address": "13 rue des Beaux-Arts",
             "postalCode": "75006",
@@ -369,7 +369,7 @@
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
         "price": "Prix - De 90 € à 320 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "31 Avenue Franklin Delano Roosevelt",
             "postalCode": "75008",
@@ -382,7 +382,7 @@
         "stars": "Trois étoiles",
         "food": "Traditionnel, Classique; Gastronomique; Lyonnais; Végétarien; Végétalien",
         "price": "Prix - De 170 € à 275 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "40 Quai de la Plage",
             "postalCode": "69660",
@@ -395,7 +395,7 @@
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Traditionnel, Classique; Gastronomique",
         "price": "Prix - De 39.5 € à 155 €",
-        "promotion": "",
+        "promotion": "Menu Mardis Gourmands 135€ le soir",
         "location": {
             "address": "39 Avenue George V",
             "postalCode": "75008",
@@ -447,7 +447,7 @@
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 45 € à 85 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "17 r. de la Poissonnerie",
             "postalCode": "68000",
@@ -460,7 +460,7 @@
         "stars": "Trois étoiles",
         "food": "Traditionnel, Classique; Gastronomique; Lyonnais; Végétarien; Végétalien",
         "price": "Prix - De 170 € à 275 €",
-        "promotion": "",
+        "promotion": "Simple booking",
         "location": {
             "address": "40 Quai de la Plage",
             "postalCode": "69660",

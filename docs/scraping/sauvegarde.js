@@ -14,6 +14,8 @@ var nbRestos=0;
 
 var jsonRestos=[];
 
+var jsonRestosLF=[];
+
 function AmountPages(callback){
 // number of pages 
 	AmmountRestaurants(function(err,results){
@@ -44,7 +46,7 @@ function AmmountRestaurants(callback){  // ne fonctionne pas encore
 	var url=urlMichelin;
 	var pageNumber=0;
 
-	console.log("PASSE DANS LA fonction");
+	//console.log("PASSE DANS LA fonction");
 
 	while(pageNumber<pageMax)
 	{
@@ -140,9 +142,11 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 
 										var jsonResto={
 											name: name,
+											idLF: '',
 											stars: stars,
 											food: food,
 											price: price,
+											promotion: '',
 											location: {
 												address: address,
 												postalCode: postalCode,
@@ -165,7 +169,7 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 										}
 										
 									}); // fin writeFile
-									console.log("Fichier JSON créé avec succès");
+									console.log("JSON file created");
 								}
 
 							})
@@ -189,11 +193,110 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 
 function GetIdsLaFourchette(){
 
-	console.log("> TEST fonction La Fourchette");
+	console.log("> Getting restaurants id from LaFourchette.com ...");
 
-	console.log(jsonRestos.length);
+	Promise.all(jsonRestos.map((resto)=>{
+		return new Promise((resolve, reject)=>{
+			var nname=resto.name.replace("&","");
+			var url=urlAPILF+"name="+nname;
+			url=encodeURI(url);
+			url=url.replace("'","%27");
+			console.log(url);
 
+			request({url:url,json:true},(error, response, body)=>{
+				if(!error && body.length>0){
+					var idResto;
+					body.forEach((element)=>{
+						if(element.address.postal_code == resto.location.postalCode){
+							idResto=element.id;
+							resto.idLF=idResto;
+							console.log(idResto);
+							resolve(idResto);
+						}
+					});
+					resolve('');
+				}
+				else{
+					resolve('');
+				}
+			}); // fin request
+
+		}); // fin promise
+
+	})) // fin map
+	.then((result)=>{
+		console.log("Restaurants list updated");
+		console.log("Updating JSON file ...");
+
+		fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
+			if(err){
+				console.log(err);
+			}
+										
+		}); // fin writeFile
+		console.log("JSON file updated");
+
+	})
+	.then(()=>{
+		GetPromos();
+	})
+	.catch((error)=>{
+		console.log(error);
+	});
+	
 }
 
+
+function GetPromos(){
+
+	console.log("> Getting promotions from LaFourchette.com ...");
+
+	Promise.all(jsonRestos.map((resto)=>{
+		return new Promise((resolve, reject)=>{
+			if(resto.idLF!=''){
+				var url='https://m.lafourchette.com/api/restaurant/'+resto.idLF+'/sale-type';
+				//console.log(url);
+
+				request({url:url,json:true},(error, response, body)=>{
+					if(!error && body.length>0){
+						var promo;
+						body.forEach((element)=>{
+							promo=element.title;
+							resto.promotion=element.title;
+							console.log(element.title);
+							resolve(promo+" id "+resto.idLF);
+						});
+					}
+					else{
+						resolve('TEST1');
+					}
+				}); // fin request
+			}
+			else{
+				resolve('TEST2');
+			}
+			
+		}); // fin promise
+
+	})) // fin map
+	.then((result)=>{
+		console.log(result);
+
+	})
+	.then((result)=>{
+		fs.writeFile('restos.json', JSON.stringify(jsonRestos, null, 4), function(err){
+			if(err){
+				console.log(err);
+			}
+										
+		}); // fin writeFile
+	})
+	.catch((error)=>{
+		console.log(error);
+	});
+}
+
+
 ScrapingMichelin();
+//GetInfosLaFourchette();
 
