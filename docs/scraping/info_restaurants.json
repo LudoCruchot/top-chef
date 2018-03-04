@@ -1,11 +1,11 @@
 [
     {
         "name": "Le 39V",
-        "idLF": "26112",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Traditionnel, Classique; Gastronomique",
         "price": "Prix - De 39.5 € à 155 €",
-        "promotion": "Menu Mardis Gourmands 135€ le soir",
+        "promotion": "",
         "location": {
             "address": "39 Avenue George V",
             "postalCode": "75008",
@@ -27,11 +27,11 @@
     },
     {
         "name": "JY'S",
-        "idLF": "5603",
+        "idLF": "",
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 45 € à 85 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "17 r. de la Poissonnerie",
             "postalCode": "68000",
@@ -79,11 +79,11 @@
     },
     {
         "name": "Le Jardin des Remparts",
-        "idLF": "4988",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Végétarien; Végétalien",
         "price": "Prix - De 32 € à 100 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "10 rue Hôtel-Dieu",
             "postalCode": "21200",
@@ -92,11 +92,11 @@
     },
     {
         "name": "Le Restaurant",
-        "idLF": "297223",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 35 € à 124 €",
-        "promotion": "-30% off the \"à la carte\" menu!",
+        "promotion": "",
         "location": {
             "address": "13 rue des Beaux-Arts",
             "postalCode": "75006",
@@ -105,11 +105,11 @@
     },
     {
         "name": "L'Orangerie du Château",
-        "idLF": "2728",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 39 € à 112 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "1 Avenue du Docteur Jean Laigret",
             "postalCode": "41000",
@@ -118,11 +118,11 @@
     },
     {
         "name": "Le Clarence",
-        "idLF": "74933",
+        "idLF": "",
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
         "price": "Prix - De 90 € à 320 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "31 Avenue Franklin Delano Roosevelt",
             "postalCode": "75008",
@@ -144,11 +144,11 @@
     },
     {
         "name": "Le 39V",
-        "idLF": "26112",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Traditionnel, Classique; Gastronomique",
         "price": "Prix - De 39.5 € à 155 €",
-        "promotion": "Menu Mardis Gourmands 135€ le soir",
+        "promotion": "",
         "location": {
             "address": "39 Avenue George V",
             "postalCode": "75008",
@@ -170,11 +170,11 @@
     },
     {
         "name": "Le Jardin des Remparts",
-        "idLF": "4988",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Végétarien; Végétalien",
         "price": "Prix - De 32 € à 100 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "10 rue Hôtel-Dieu",
             "postalCode": "21200",
@@ -222,11 +222,11 @@
     },
     {
         "name": "Restaurant du Palais Royal",
-        "idLF": "21741",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 48 € à 152 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "110 Galerie de Valois - Jardin du Palais Royal",
             "postalCode": "75001",
@@ -248,11 +248,11 @@
     },
     {
         "name": "Paul Bocuse",
-        "idLF": "5355",
+        "idLF": "",
         "stars": "Trois étoiles",
         "food": "Traditionnel, Classique; Gastronomique; Lyonnais; Végétarien; Végétalien",
         "price": "Prix - De 170 € à 275 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "40 Quai de la Plage",
             "postalCode": "69660",
@@ -274,11 +274,11 @@
     },
     {
         "name": "Restaurant du Palais Royal",
-        "idLF": "21741",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 48 € à 152 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "110 Galerie de Valois - Jardin du Palais Royal",
             "postalCode": "75001",
@@ -300,11 +300,11 @@
     },
     {
         "name": "Paul Bocuse",
-        "idLF": "5355",
+        "idLF": "",
         "stars": "Trois étoiles",
         "food": "Traditionnel, Classique; Gastronomique; Lyonnais; Végétarien; Végétalien",
         "price": "Prix - De 170 € à 275 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "40 Quai de la Plage",
             "postalCode": "69660",
@@ -326,11 +326,11 @@
     },
     {
         "name": "Agapé",
-        "idLF": "1923",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 52 € à 215 €",
-        "promotion": "Menu Prestige 72€",
+        "promotion": "",
         "location": {
             "address": "51 Rue Jouffroy-d'Abbans",
             "postalCode": "75017",
@@ -339,11 +339,11 @@
     },
     {
         "name": "L'Orangerie du Château",
-        "idLF": "2728",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique; Traditionnel, Classique",
         "price": "Prix - De 39 € à 112 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "1 Avenue du Docteur Jean Laigret",
             "postalCode": "41000",
@@ -365,11 +365,11 @@
     },
     {
         "name": "Le Restaurant",
-        "idLF": "297223",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 35 € à 124 €",
-        "promotion": "-30% off the \"à la carte\" menu!",
+        "promotion": "",
         "location": {
             "address": "13 rue des Beaux-Arts",
             "postalCode": "75006",
@@ -391,11 +391,11 @@
     },
     {
         "name": "Le Clarence",
-        "idLF": "74933",
+        "idLF": "",
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique; Végétarien; Végétalien",
         "price": "Prix - De 90 € à 320 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "31 Avenue Franklin Delano Roosevelt",
             "postalCode": "75008",
@@ -417,11 +417,11 @@
     },
     {
         "name": "Agapé",
-        "idLF": "1923",
+        "idLF": "",
         "stars": "Une étoile",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 52 € à 215 €",
-        "promotion": "Menu Prestige 72€",
+        "promotion": "",
         "location": {
             "address": "51 Rue Jouffroy-d'Abbans",
             "postalCode": "75017",
@@ -443,11 +443,11 @@
     },
     {
         "name": "JY'S",
-        "idLF": "5603",
+        "idLF": "",
         "stars": "Deux étoiles",
         "food": "Cuisine Moderne, Créative; Gastronomique",
         "price": "Prix - De 45 € à 85 €",
-        "promotion": "Simple booking",
+        "promotion": "",
         "location": {
             "address": "17 r. de la Poissonnerie",
             "postalCode": "68000",

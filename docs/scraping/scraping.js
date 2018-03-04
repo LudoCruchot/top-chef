@@ -41,12 +41,11 @@ function AmountPages(callback){
 	});
 }
 
-function AmmountRestaurants(callback){  // ne fonctionne pas encore
+function AmmountRestaurants(callback){
 
 	var url=urlMichelin;
 	var pageNumber=0;
 
-	//console.log("PASSE DANS LA fonction");
 
 	while(pageNumber<pageMax)
 	{
@@ -75,7 +74,7 @@ function AmmountRestaurants(callback){  // ne fonctionne pas encore
 	callback(nbRestos);
 }
 
-function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés par des constantes pour les test!!
+function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés par des constantes, bug sinon, cause non trouvée
 // scraping restaurants
 	AmountPages(function(err,results){
 		console.log("Start scraping");
@@ -115,7 +114,7 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 									if(!error){
 										var $ = cheerio.load(html);
 
-										console.log("> Scan: "+(jsonRestos.length+1)+" / "+TEST_nbRestos);
+										console.log("Scanning restaurant : "+(jsonRestos.length+1)+" / "+TEST_nbRestos+" ...");
 
 										var name=$('.poi_intro-description > .poi_intro-display-title').text().trim();
 										
@@ -163,13 +162,13 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 								jsonRestos.push(result);
 
 								if(jsonRestos.length==TEST_nbRestos){
-									fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
+									fs.writeFile('info_restaurants.json', JSON.stringify(jsonRestos, null, 4), function(err){
 										if(err){
 											console.log(err);
 										}
 										
 									}); // fin writeFile
-									console.log("JSON file created");
+									console.log(">Restaurants stored in a JSON file named 'info_restaurants.json'");
 								}
 
 							})
@@ -193,7 +192,7 @@ function ScrapingMichelin(callback){   // note: pageMax et nbRestos remplacés p
 
 function GetIdsLaFourchette(){
 
-	console.log("> Getting restaurants id from LaFourchette.com ...");
+	console.log("Getting restaurants id from LaFourchette.com ...");
 
 	Promise.all(jsonRestos.map((resto)=>{
 		return new Promise((resolve, reject)=>{
@@ -201,7 +200,6 @@ function GetIdsLaFourchette(){
 			var url=urlAPILF+"name="+nname;
 			url=encodeURI(url);
 			url=url.replace("'","%27");
-			console.log(url);
 
 			request({url:url,json:true},(error, response, body)=>{
 				if(!error && body.length>0){
@@ -210,7 +208,6 @@ function GetIdsLaFourchette(){
 						if(element.address.postal_code == resto.location.postalCode){
 							idResto=element.id;
 							resto.idLF=idResto;
-							console.log(idResto);
 							resolve(idResto);
 						}
 					});
@@ -225,7 +222,7 @@ function GetIdsLaFourchette(){
 
 	})) // fin map
 	.then((result)=>{
-		console.log("Restaurants list updated");
+		console.log(">All the ids fetched")
 		console.log("Updating JSON file ...");
 
 		fs.writeFile('info_resto.json', JSON.stringify(jsonRestos, null, 4), function(err){
@@ -234,7 +231,7 @@ function GetIdsLaFourchette(){
 			}
 										
 		}); // fin writeFile
-		console.log("JSON file updated");
+		console.log(">'info_restaurants.json' updated with La Fourchette id");
 
 	})
 	.then(()=>{
@@ -249,7 +246,7 @@ function GetIdsLaFourchette(){
 
 function GetPromos(){
 
-	console.log("> Getting promotions from LaFourchette.com ...");
+	console.log("Getting promotions from LaFourchette.com ...");
 
 	Promise.all(jsonRestos.map((resto)=>{
 		return new Promise((resolve, reject)=>{
@@ -283,9 +280,6 @@ function GetPromos(){
 	.then((result)=>{
 		//console.log(result);
 
-		jsonRestos.forEach((resto)=>{
-			console.log(resto);
-		});
 	})
 	.then(()=>{
 		fs.writeFile('restos.json', JSON.stringify(jsonRestos, null, 4), function(err){
@@ -305,9 +299,11 @@ function GetPromos(){
 
 function DisplayPromotions(){
 
+	console.log(">> Deals found on LaFourchette.com for Michelin's stared restaurants");
+
 	jsonRestos.forEach((resto)=>{
 		if(resto.promotion!=''){
-			console.log("Deals of the restaurant "+resto.name+" : "+resto.promotion);
+			console.log(resto.name+" : "+resto.promotion);
 		}
 	});
 }
